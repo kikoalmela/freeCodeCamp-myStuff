@@ -1,0 +1,155 @@
+////////////////////////////////////////////////
+// SIDEBAR
+.sidebar {
+  
+  &__header {
+    padding: 2rem;
+    border-bottom: 1px solid $color-secondary;
+    
+    @include respond(tab-port) {
+      width: 100%;
+      padding: 2rem 10% 2rem;
+
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: $color-secondary;
+
+    &-2 {
+      display: block;
+      font-size: 2rem;
+    }
+  }
+
+
+  &__link {
+    line-height: 1.4;
+    margin-bottom: .8rem;
+    transition: .1s;
+    display: block;
+
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: $color-secondary-light;
+    }
+
+    &:hover,
+    &:active,
+    &::selection {
+      color: $color-secondary;
+    }
+
+    &:active {
+      transform: scale(1.01) translateY(-.05rem);
+      transform-origin: 15%;
+      text-shadow: 0 1rem 2rem rgba(0,0,0,.5);
+    }
+
+    &--primary {
+      font-size: 2rem;
+      margin-top: 2rem;
+
+      &:first-child {
+        margin-top: 2.5rem;
+      }
+    }
+
+    &--secondary {
+      margin-left: 2rem;
+      font-size: 1.8rem;
+    }
+  }
+
+  .sidebar__close {
+      font-size: 3rem;      
+      color: $color-secondary;
+      text-decoration: none;
+  }
+
+  .sidebar__menu {
+    font-size: 2rem;
+    padding-top: 1rem;
+  }
+}
+
+
+////////////////////////////////////////////////
+// CONTENT
+.content {
+
+  &__section {
+    margin-bottom: 4rem;
+
+    &:not(:first-child) .content__header-primary {
+      margin-top: 4rem;
+    }
+  }
+
+  &__header {
+    color: $color-primary;
+    margin-bottom: 1.5rem;
+
+    &-primary {
+      font-size: 2.6rem;
+      font-weight: 400;
+    }
+    
+    &-secondary {
+      font-size: 2rem;
+      // font-weight: 400;
+    }
+  }
+
+  &__paragraph {
+
+    @include respond(phone) {
+      text-align: justify;
+    }
+  }
+
+  &__img {
+    width: 40%;
+    display: block;
+    margin: 3rem auto;
+  }
+
+  &__list {
+    list-style-type: square;
+    list-style-position: inside;
+
+    &-item:not(:last-child) {
+      margin-bottom: .8rem;
+    }
+  }
+}
+
+
+////////////////////////////////////////////////
+// CODE
+code {
+  // font-size: 2rem;
+  background-color: $color-primary-light;
+}
+
+.code-block {
+  margin: 1rem auto;
+  padding: 0 1.6rem;
+  background-color: $color-primary-light;
+  width: 80%;
+  overflow-x: auto;
+
+  @include respond(tab-port) {
+    width: 90%;
+  }
+
+  @include respond(phone) {
+    width: 100%;
+  }
+}
+

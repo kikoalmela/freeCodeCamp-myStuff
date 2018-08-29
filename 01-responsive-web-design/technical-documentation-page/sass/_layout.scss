@@ -1,0 +1,119 @@
+////////////////////////////////////////////////
+// CONTAINER
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  // padding-top: 6rem;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+    overflow: visible;
+  }
+}
+
+
+////////////////////////////////////////////////
+// SIDEBAR LAYOUT
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 26%;
+  // padding: 2rem;
+
+  background-color: $color-primary;
+
+  @include respond(tab-land) {
+    // padding: 1rem;
+  }
+
+  @include respond(tab-port) {
+    position: fixed;
+    width: 100%;
+    // min-height: 12rem;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+
+  &__menu {
+    display: none;
+
+    @include respond(tab-port) {
+      display: block;
+      color: $color-secondary;
+      text-decoration: none;
+    }
+  }
+  
+  &__close {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 0 2rem 2rem;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &#navbar:target {
+
+    .sidebar__list {
+      @include respond(tab-port) {
+        display: block;
+      }
+    }
+
+    .sidebar__close {
+      @include respond(tab-port) {
+        color: $color-secondary;
+        text-decoration: none;
+        display: block;
+      }
+    }
+
+    .sidebar__menu {
+      @include respond(tab-port) {
+        display: none;
+      }
+    }
+  }
+}
+
+
+////////////////////////////////////////////////
+// CONTENT LAYOUT
+.content {
+  padding: 3.4rem 8rem 9rem;
+  overflow-y: auto;
+
+  background-color: $color-white;
+
+  @include respond(tab-port) {
+    overflow: visible;
+    margin-top: 18rem;
+    padding: 3.4rem 10% 9rem;
+  }
+
+  @include respond(phone) {
+  }
+}
+
+// :target:before {
+//   content:"";
+//   display: block;
+//   height: 19rem; /* fixed header height*/
+//   margin: -19rem 0 0; /* negative fixed header height */
+// }
+
+:target:not(#navbar){
+  @include respond(tab-port) {
+    padding-top: 19rem;
+    margin: -19rem 0 0;
+  }
+}

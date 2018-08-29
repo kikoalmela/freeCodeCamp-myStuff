@@ -1,0 +1,7 @@
+:root {
+  --color1: #130929;
+  --color2: #251253;
+  --color3: #381b7e;
+  --color4: #666666;
+  --color5: #7f7f7f;
+}

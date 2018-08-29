@@ -1,0 +1,14 @@
+{
+  "name": "survey-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass -wr sass/ -o css/"
+  },
+  "author": "antalmega",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.2"
+  }
+}

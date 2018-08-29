@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,900");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box;
+  position: relative;
+  padding: 3rem; }
+  @media (max-width: 75em) {
+    body {
+      padding: 0; } }
+
+body {
+  font-family: "raleway", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #251353; }
+
+.form-header {
+  color: #f0eaff; }
+  .form-header__title {
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: .3rem;
+    word-spacing: -.6rem;
+    text-transform: capitalize; }
+    @media (max-width: 37.5em) {
+      .form-header__title {
+        font-size: 4.5rem; } }
+  .form-header__description {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 5rem; }
+    @media (max-width: 37.5em) {
+      .form-header__description {
+        font-size: 2.5rem; } }
+    .form-header__description--1 {
+      display: block; }
+    .form-header__description--2 {
+      display: block; }
+
+.heading-tertiary {
+  font-weight: 500; }
+
+.u-margin-bottom-small {
+  margin-bottom: 2rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+
+.btn {
+  display: block;
+  background-color: #e2d203;
+  margin: 5rem auto;
+  padding: 2rem 4rem;
+  color: #251353;
+  font-size: 2.5rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 4rem;
+  transition: all .2s; }
+  .btn:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 0 1rem 2rem rgba(19, 9, 41, 0.2); }
+  .btn:active, .btn:focus {
+    outline: none;
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.5rem 1.5rem rgba(19, 9, 41, 0.2); }
+
+.form-header {
+  background-color: #251353;
+  padding: 4rem 2rem; }
+  .form-header__text-box {
+    text-align: center; }
+
+.form {
+  padding: 0 5rem; }
+  .form__group {
+    position: relative; }
+    .form__group:not(:last-child) {
+      margin-bottom: 2rem; }
+  .form__input, .form__label {
+    display: block;
+    width: 75%;
+    margin: 0 auto 0.4rem; }
+  .form__input {
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: inherit;
+    padding: 1rem;
+    border: none; }
+    .form__input:focus {
+      outline: none;
+      border-bottom: 1px solid #8568C9;
+      box-shadow: 0 1rem 3rem rgba(19, 9, 41, 0.1); }
+    .form__input:invalid {
+      border-bottom: 1px solid red; }
+    .form__input::-webkit-input-placeholder {
+      color: rgba(133, 104, 201, 0.6); }
+  .form__label {
+    color: rgba(133, 104, 201, 0.6);
+    transform: translate(1.2rem, 0);
+    transition: all 0.3s; }
+  .form__input:placeholder-shown + .form__label {
+    transform: translate(1.2rem, -3.5rem);
+    opacity: 0; }
+  .form__select-group {
+    width: 75%;
+    margin: 0 auto;
+    border: 1px solid white;
+    background-color: white; }
+  .form__dropdown {
+    display: block;
+    width: 100%;
+    height: 4rem;
+    margin: 0 auto;
+    padding-left: 1rem;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: none;
+    background-color: white; }
+    .form__dropdown:focus {
+      outline: none; }
+  .form__radio-list {
+    width: 50%;
+    margin: 0 auto;
+    transform: translateX(15%); }
+  .form__radio-group {
+    display: inline-block;
+    width: 49%; }
+    @media (max-width: 37.5em) {
+      .form__radio-group {
+        display: block;
+        margin-bottom: 3rem; } }
+  .form__radio-input {
+    display: none; }
+  .form__radio-label {
+    position: relative;
+    padding-left: 5rem;
+    cursor: pointer; }
+  .form__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid #381b7d;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0; }
+    .form__radio-button::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: "";
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      background-color: #381b7d;
+      opacity: 0;
+      transition: opacity 0.2s; }
+  .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+    opacity: 1; }
+  .form__check-list {
+    width: 75%;
+    margin: 0 auto; }
+  .form__check-group {
+    margin-bottom: 2rem; }
+  .form__check-input {
+    display: none; }
+  .form__check-label {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 2rem;
+    background-image: linear-gradient(120deg, #381b7d 0%, #381b7d 90%, #f0eaff 90%);
+    background-size: 1.5% 100%;
+    background-repeat: no-repeat;
+    transition: all .3s; }
+    .form__check-label:hover {
+      background-size: 40% 100%;
+      color: #f0eaff;
+      transition: all .3s; }
+      @media (max-width: 75em) {
+        .form__check-label:hover {
+          background-size: 1% 100%;
+          color: #251353; } }
+  .form__check-input:checked + .form__check-label {
+    background-size: 100%;
+    color: #f0eaff; }
+  .form__comments-box {
+    resize: none;
+    border: none;
+    display: block;
+    width: 75%;
+    height: 15rem;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit; }
+    @media (max-width: 37.5em) {
+      .form__comments-box {
+        width: 95%; } }
+    .form__comments-box:focus {
+      outline: none;
+      box-shadow: 0 1rem 3rem rgba(19, 9, 41, 0.1); }
+
+.section-survey {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  background-color: #f0eaff;
+  max-width: 90rem;
+  border-radius: .5rem;
+  box-shadow: 0 1.5rem 3rem rgba(19, 9, 41, 0.3);
+  overflow: hidden; }
+  @media (max-width: 75em) {
+    .section-survey {
+      width: 100%;
+      max-width: none;
+      border-radius: 0; } }
+
+.heading-tertiary {
+  margin-top: 4rem; }

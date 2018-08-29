@@ -1,0 +1,20 @@
+.section-survey {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  background-color: $color-primary-soft;
+  max-width: 90rem;
+  border-radius: .5rem;
+  box-shadow: 0 1.5rem 3rem rgba($color-black, .3);
+  overflow: hidden;
+
+  @include respond(tab-land) {
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
+  }
+}
+
+.heading-tertiary {
+  margin-top: 4rem;
+}

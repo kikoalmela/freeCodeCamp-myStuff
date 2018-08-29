@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,900");
+
+body {
+  font-family: "raleway", sans-serif;
+  font-size: $default-font-size;
+  line-height: 1.7;
+  color: $color-primary-dark;
+}
+
+.form-header {
+  color: $color-primary-soft;
+
+  &__title {
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: .3rem;
+    word-spacing: -.6rem;
+    text-transform: capitalize;
+
+    @include respond(phone) {
+      font-size: 4.5rem;
+    }
+  }
+
+  &__description {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 5rem;
+
+    @include respond(phone) {
+      font-size: 2.5rem;
+    }
+
+    &--1 {
+      display: block;
+    }
+  
+    &--2 {
+      display: block;
+    }
+  }
+}
+
+.heading-tertiary {
+  font-weight: 500;
+}

@@ -1,0 +1,65 @@
+// COLORS ========================
+$color-primary: #2F465B;
+$color-primary-light: #dde6f0;
+
+$color-secondary: #F5B703;
+$color-secondary-light: #faefce;
+
+$color-white: #fffcf4;
+
+$color-grey-light: #eee;
+$color-grey-dark: #555;
+
+// MEDIA QUERIES ===================
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) { @content }; //600px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) { @content }; //900px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) { @content }; //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) { @content }; //1800px
+  }
+}
+
+////////////////////////////////////////////////
+// BASE
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px, 10px/16px(browser default) = 62.5%
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px -> 9/16 = 0.5625%
+  }
+  
+  @include respond(tab-port) {
+    font-size: 50%; // 1rem = 8px -> 8/16 = 0.5
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12px -> 12/16 = 0.75
+  }
+}
+
+body {
+  color: $color-grey-dark;
+  font-family: "Opens Sans", sans-serif;
+  font-weight: 300;
+  font-size: 1.7rem;
+  line-height: 1.6;
+}
