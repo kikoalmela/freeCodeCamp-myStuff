@@ -1,20 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
 
-        <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png"> -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png"> -->
+
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
 
 
-        <title>Technical Documentation Page</title>
-    </head>
-    
-    <body>
-      Listo para picar código!
-    </body>
+    <title>Product Landing Page</title>
+</head>
+
+<body>
+    <main>
+        <section class="description" id="description">
+            <div class="description__box">
+                <figure class="description__img">
+                    <img src="img/baroque_violin_front.png " alt="baroque violin front" class="description__vl description__vl--front">
+                </figure>
+                <div class="description__text">
+                    <h2 class="heading-secondary">Violin's Details</h2>
+                    <p class="description__paragraph">Anonymous violin. In good condition, fully restored, and recently revised, by Claire Ryder in his workshop in Paris. The neck, the bridge, the tailpiece, the sound post and the bass bar were reconstructed according to the baroque canons, returning them to their original state.</p>
+                    <p class="description__paragraph">It has been used as his main violin by Antonio Almela for more than 15 years. Playing in many concert halls throughout Europe and America, along with musicians like François Fernandez or Emilio Moreno, who have instruments by Andrea Guarneri and Antonio Gagliano, it has shown his qualities with a beautiful, warm and present sound.</p>
+                </div>
+            </div>
+            <div class="description__box">
+                <figure class="description__img">
+                    <img src="img/baroque_violin_back.png " alt="baroque violin back" class="description__vl description__vl--back">
+                </figure>
+                <div class="description__text">
+                    <h2 class="heading-secondary">Violin for Sale</h2>
+                    <p class="description__paragraph">This instrument is currently for sale, being exposed in A.E.Fowler Instrumentos Musicales, in Seville, where you can request to try it.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 class="heading-secondary">
+                Contact
+            </h2>
+            
+            <div class="form">
+                <div class="form__group">
+                    <input type="text" class="form__input" name="name" id="name" placeholder="name" required>
+                    <label for="name" id="name-label" class="form__label">name</label>
+                </div>
+                <div class="form__group">
+                    <input type="email" class="form__input" name="email" id="email" placeholder="email" required>
+                    <label for="email" id="email-label" class="form__label">name</label>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <header class="header" id="header">
+        <nav class="nav" id="nav-bar">
+            <h1 class="nav__title">Baroque Violin</h1>
+            <ul class="nav__list">
+                <li class="nav__item nav-link">
+                    <a href="#description" class="nav__link">Description</a>
+                </li>
+                <li class="nav__item nav-link">
+                    <a href="#video" class="nav__link">video</a>
+                </li>
+                <li class="nav__item nav-link">
+                    <a href="#contact" class="nav__link">contact</a>
+                </li>
+            </ul>
+        </nav>
+        <img src="img/Baroque_violin-hero.jpg" alt="" class="header__img" id="header-img">
+    </header>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  color: rgba($color-primary-dark, .9);
+}
+
+.header {
+  order: -1;
+  width: 100%;
+  // height: 80vh;
+  // overflow: hidden;
+  /* background-image: url(../img/Baroque_violin-hero.jpg);
+  background-attachment: scroll;
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat; */
+
+  &__img {
+    // display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .nav {
+    position: fixed;
+    background: linear-gradient($color-primary-dark,
+                                rgba($color-primary-dark, .85) 25%,
+                                rgba($color-primary, .8) 50%,
+                                rgba($color-primary, .675) 62.5%,
+                                rgba($color-primary, .450) 75%,
+                                rgba($color-primary-light, .225) 87.5%,
+                                rgba($color-primary-light, 0));
+    width: 100%;
+    height: 15rem;
+  }
+}
+
+:target:before {
+  content:"";
+  display: block;
+  height: 7rem; /* fixed navbar height*/
+  margin: -7rem 0 0; /* negative fixed navbar height */
+}
+

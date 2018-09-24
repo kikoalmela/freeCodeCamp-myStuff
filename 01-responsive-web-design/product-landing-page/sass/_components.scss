@@ -1,0 +1,181 @@
+//////////////////////////////////////////////////
+// NAVBAR
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 3rem 0;
+  font-family: "Cinzel Decorative", cursive;
+  transition: all .2s;
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 400;
+    background-image: linear-gradient(to right bottom, $color-secondary-light, $color-light);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    padding-left: 6rem;
+    text-shadow: $text-shadow;
+    transition: all .2s;
+  }
+
+  &__list {
+    font-size: 2rem;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    transition: all .2s;
+  }
+
+  &__item {
+    padding: 0 7rem;
+
+    &:not(:last-child) {
+    }
+
+    &:hover {
+      background: linear-gradient(rgba($color-primary-light, 0), rgba($color-primary, .6));
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    background-image: linear-gradient(170deg, $color-secondary-light, $color-light);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration: none;
+  }
+}
+
+main:hover ~ .header .nav {
+  height: 7rem;
+  padding: 1.5rem 0;
+  background: linear-gradient(rgba($color-primary-dark, 1),
+                              rgba($color-primary, 1)65%,
+                              rgba($color-primary-light, 1)100%);
+
+  
+  &__title {
+    font-size: 2.5rem;
+  }
+
+  &__list {
+    font-size: 1.5rem;
+  }
+}
+
+//////////////////////////////////////////////////
+// HEADINGS
+.heading-secondary {
+  font-family: 'Bad Script', cursive;
+  font-size: 5rem;
+  font-weight: 700;
+  background-image: linear-gradient(-30deg, $color-primary, $color-primary-light);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: $text-shadow-light;
+}
+
+
+//////////////////////////////////////////////////
+// DESCRIPTION
+.description {
+  width: 80%;
+  margin: auto;
+
+  &__box {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-right: 8rem;
+
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+      padding: 0;
+    }
+
+    /* @include respond(phone) {
+      flex-direction: column;
+    } */
+  }
+  
+  &__img {
+    flex: 0 0 30%;
+    text-align: center;
+  }
+  
+  &__vl {
+    max-height: 90vh;
+  }
+  
+  &__text {
+    flex: 1 0 50%;
+    align-self: center;
+    width: 50%;
+  }
+  
+  &__paragraph {
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+    line-height: 2.5rem;
+  }
+}
+
+
+
+//////////////////////////////////////////////////
+// CONTACT
+.contact {
+  width: 80%;
+  margin: 5rem auto; 
+  padding: 2rem;
+  background-color: rgba($color-secondary-dark, .1);
+
+  // FORM
+  .form {
+    margin: 2rem 0;
+  
+    &__group {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  
+    &__input,
+    &__label {
+      display: block;
+      width: 75%;
+      margin: 0 auto 0.4rem;
+    }
+  
+    &__input {
+      font-family: inherit;
+      font-size: 1.5rem;
+      color: rgba($color-primary-light, 0.6);
+      padding: 1rem;
+      border: none;
+  
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid $color-primary-light;
+        box-shadow: 0 1rem 3rem rgba($color-primary-dark, 0.1);
+      }
+  
+      &:invalid {
+        border-bottom: 1px solid red;
+      }
+  
+      &::-webkit-input-placeholder {
+        color: rgba($color-primary-light, 0.6);
+      }
+    }
+  
+    &__label {
+    }
+  }
+}

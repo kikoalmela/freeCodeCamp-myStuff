@@ -1,5 +1,17 @@
 // COLORS ========================
+$color-primary: #005162;
+$color-primary-light: #0491AF;
+$color-primary-dark: #003C49;
+$color-secondary: #AF5404;
+$color-secondary-light: #FB861F;
+$color-secondary-dark: #622F01;
+$color-light: #ffeee0;
 
+$text-shadow: 0.5rem .6rem 2rem rgba(0, 0, 0, 0.6);
+$text-shadow-light: 0.5rem .6rem 2rem rgba(0, 0, 0, 0.2);
+
+// FONTS ===================
+@import url('https://fonts.googleapis.com/css?family=Bad+Script|Cinzel+Decorative:400,700,900|Sofadi+One');
 
 // MEDIA QUERIES ===================
 @mixin respond($breakpoint) {
