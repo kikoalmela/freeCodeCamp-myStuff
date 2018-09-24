@@ -59,3 +59,7 @@ html {
     font-size: 75%; // 1rem = 12px -> 12/16 = 0.75
   }
 }
+
+::selection {
+  background-color: rgba($color-secondary-light, .4)
+}

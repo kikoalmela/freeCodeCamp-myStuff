@@ -37,6 +37,11 @@ body {
   }
 }
 
+section {
+  width: 80%;
+  margin: 5rem auto;
+}
+
 :target:before {
   content:"";
   display: block;

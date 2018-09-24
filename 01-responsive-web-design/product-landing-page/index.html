@@ -10,9 +10,6 @@
 
     <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png"> -->
 
-    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
-
-
     <title>Product Landing Page</title>
 </head>
 
@@ -25,8 +22,14 @@
                 </figure>
                 <div class="description__text">
                     <h2 class="heading-secondary">Violin's Details</h2>
-                    <p class="description__paragraph">Anonymous violin. In good condition, fully restored, and recently revised, by Claire Ryder in his workshop in Paris. The neck, the bridge, the tailpiece, the sound post and the bass bar were reconstructed according to the baroque canons, returning them to their original state.</p>
-                    <p class="description__paragraph">It has been used as his main violin by Antonio Almela for more than 15 years. Playing in many concert halls throughout Europe and America, along with musicians like François Fernandez or Emilio Moreno, who have instruments by Andrea Guarneri and Antonio Gagliano, it has shown his qualities with a beautiful, warm and present sound.</p>
+                    <p class="description__paragraph">Anonymous violin. In good condition, fully restored, and recently
+                        revised, by Claire Ryder in his workshop in Paris. The neck, the bridge, the tailpiece, the
+                        sound post and the bass bar were reconstructed according to the baroque canons, returning them
+                        to their original state.</p>
+                    <p class="description__paragraph">It has been used as his main violin by Antonio Almela for more
+                        than 15 years. Playing in many concert halls throughout Europe and America, along with
+                        musicians like François Fernandez or Emilio Moreno, who have instruments by Andrea Guarneri and
+                        Antonio Gagliano, it has shown his qualities with a beautiful, warm and present sound.</p>
                 </div>
             </div>
             <div class="description__box">
@@ -35,8 +38,22 @@
                 </figure>
                 <div class="description__text">
                     <h2 class="heading-secondary">Violin for Sale</h2>
-                    <p class="description__paragraph">This instrument is currently for sale, being exposed in A.E.Fowler Instrumentos Musicales, in Seville, where you can request to try it.</p>
+                    <p class="description__paragraph">This instrument is currently for sale, being exposed in
+                        A.E.Fowler Instrumentos Musicales, in Seville, where you can request to try it.</p>
                 </div>
+            </div>
+        </section>
+
+        <section id="video-section" class="video">
+            <h2 class="heading-secondary">
+                Video
+            </h2>
+
+            <div class="video__wrap">
+                <div class="video__container">
+                    <iframe id="video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/1gVJeCaBRKc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="video__description">This is the video description</div>
             </div>
         </section>
 
@@ -44,37 +61,53 @@
             <h2 class="heading-secondary">
                 Contact
             </h2>
-            
-            <div class="form">
+
+            <form action="https://www.freecodecamp.com/email-submit" class="form" id="form">
                 <div class="form__group">
                     <input type="text" class="form__input" name="name" id="name" placeholder="name" required>
                     <label for="name" id="name-label" class="form__label">name</label>
                 </div>
+
                 <div class="form__group">
                     <input type="email" class="form__input" name="email" id="email" placeholder="email" required>
                     <label for="email" id="email-label" class="form__label">name</label>
                 </div>
-            </div>
+
+                <div class="form__group">
+                    <textarea name="comments" id="comments" class="form__comments-box" placeholder="Comments"></textarea>
+                </div>
+
+                <div class="form__group">
+                    <input type="submit" id="submit" class="btn form__btn"></input>
+                </div>
+            </form>
         </section>
     </main>
 
     <header class="header" id="header">
         <nav class="nav" id="nav-bar">
-            <h1 class="nav__title">Baroque Violin</h1>
+            <h1 class="nav__title"><a href="#" class="nav__link">Baroque Violin</a></h1>
             <ul class="nav__list">
-                <li class="nav__item nav-link">
-                    <a href="#description" class="nav__link">Description</a>
+                <li class="nav__item">
+                    <a href="#description" class="nav__link nav-link">Description</a>
                 </li>
-                <li class="nav__item nav-link">
-                    <a href="#video" class="nav__link">video</a>
+                <li class="nav__item">
+                    <a href="#video-section" class="nav__link nav-link">video</a>
                 </li>
-                <li class="nav__item nav-link">
-                    <a href="#contact" class="nav__link">contact</a>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link nav-link">contact</a>
                 </li>
             </ul>
         </nav>
         <img src="img/Baroque_violin-hero.jpg" alt="" class="header__img" id="header-img">
     </header>
+
+    <footer class="footer">
+        <div class="footer__copy">&copy; antalmega</div>
+    </footer>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
 </body>
 
 </html>
