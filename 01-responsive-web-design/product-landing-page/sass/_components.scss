@@ -1,11 +1,25 @@
 //////////////////////////////////////////////////
+// HEADER
+.header {
+
+  &__btn {
+    margin: 0 auto;
+    position: absolute;
+    top: 30%;
+    right: 70%;
+  }
+}
+
+
+//////////////////////////////////////////////////
 // NAVBAR
 .nav {
+  font-family: "Cinzel Decorative", cursive;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   padding: 3rem 0;
-  font-family: "Cinzel Decorative", cursive;
+  z-index: 1;
   transition: all 0.2s;
 
   &__title {
@@ -168,7 +182,7 @@ main:hover ~ .header .nav {
 .video {
   
   &__wrap {
-    width: 80%;
+    width: 75%;
     margin: 5rem auto;
   }
 
@@ -279,31 +293,38 @@ main:hover ~ .header .nav {
   }
 
   &__btn {
-    color: $color-primary;
-    font-size: 2.5rem;
     display: block;
     margin: 4rem auto 0;
-    padding: 2rem 5rem;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: $color-secondary-light;
-    box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.3);
-    transition: all 0.2s;
-
-    &:hover,
-    &:focus {
-      outline: none;
-      transform: scale(1.1);
-      box-shadow: 0 1rem 1.5rem rgba($color-primary-dark, 0.3);
-    }
-
-    &:active {
-      transform: scale(1.1) translateY(0.2rem);
-      box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.3);
-    }
   }
 }
 
+//////////////////////////////////////////////////
+// BUTTON
+.btn {
+  color: $color-primary;
+  font-size: 2.5rem;
+  padding: 2rem 5rem;
+  border: none;
+  border-radius: 10rem;
+  background-color: $color-secondary-light;
+  box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.3);
+  transition: all 0.2s;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    transform: scale(1.1);
+    box-shadow: 0 1rem 1.5rem rgba($color-primary-dark, 0.3);
+  }
+
+  &:active {
+    transform: scale(1.1) translateY(0.2rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.3);
+  }
+}
+
+//////////////////////////////////////////////////
+// FOOTER
 .footer {
   height: 5rem;
   padding: 1.5rem 0;

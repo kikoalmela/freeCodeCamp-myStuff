@@ -34,6 +34,7 @@ body {
 .header {
   order: -1;
   width: 100%;
+  position: relative;
   /* background-image: url(../img/Baroque_violin-hero.jpg);
   background-attachment: scroll;
   background-size: 100%;
@@ -60,12 +61,19 @@ section {
   margin: -7rem 0 0;
   /* negative fixed navbar height */ }
 
+.header__btn {
+  margin: 0 auto;
+  position: absolute;
+  top: 30%;
+  right: 70%; }
+
 .nav {
+  font-family: "Cinzel Decorative", cursive;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   padding: 3rem 0;
-  font-family: "Cinzel Decorative", cursive;
+  z-index: 1;
   transition: all 0.2s; }
   .nav__title {
     font-size: 4rem;
@@ -164,7 +172,7 @@ main:hover ~ .header .nav {
   line-height: 2.5rem; }
 
 .video__wrap {
-  width: 80%;
+  width: 75%;
   margin: 5rem auto; }
 
 .video__container {
@@ -238,23 +246,25 @@ main:hover ~ .header .nav {
       outline: none;
       box-shadow: 0 1rem 3rem rgba(0, 60, 73, 0.1); }
   .form__btn {
-    color: #005162;
-    font-size: 2.5rem;
     display: block;
-    margin: 4rem auto 0;
-    padding: 2rem 5rem;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: #FB861F;
-    box-shadow: 0 0.5rem 1rem rgba(0, 60, 73, 0.3);
-    transition: all 0.2s; }
-    .form__btn:hover, .form__btn:focus {
-      outline: none;
-      transform: scale(1.1);
-      box-shadow: 0 1rem 1.5rem rgba(0, 60, 73, 0.3); }
-    .form__btn:active {
-      transform: scale(1.1) translateY(0.2rem);
-      box-shadow: 0 0.5rem 1rem rgba(0, 60, 73, 0.3); }
+    margin: 4rem auto 0; }
+
+.btn {
+  color: #005162;
+  font-size: 2.5rem;
+  padding: 2rem 5rem;
+  border: none;
+  border-radius: 10rem;
+  background-color: #FB861F;
+  box-shadow: 0 0.5rem 1rem rgba(0, 60, 73, 0.3);
+  transition: all 0.2s; }
+  .btn:hover, .btn:focus {
+    outline: none;
+    transform: scale(1.1);
+    box-shadow: 0 1rem 1.5rem rgba(0, 60, 73, 0.3); }
+  .btn:active {
+    transform: scale(1.1) translateY(0.2rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 60, 73, 0.3); }
 
 .footer {
   height: 5rem;
