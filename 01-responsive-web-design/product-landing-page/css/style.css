@@ -63,9 +63,10 @@ section {
 
 .header__btn {
   margin: 0 auto;
+  padding: 2rem 2rem;
   position: absolute;
-  top: 30%;
-  right: 70%; }
+  bottom: 14%;
+  right: 8%; }
 
 .nav {
   font-family: "Cinzel Decorative", cursive;
@@ -73,8 +74,8 @@ section {
   justify-content: space-between;
   align-items: baseline;
   padding: 3rem 0;
-  z-index: 1;
-  transition: all 0.2s; }
+  z-index: 2;
+  transition: all 0.3s; }
   .nav__title {
     font-size: 4rem;
     font-weight: 400;
@@ -84,7 +85,7 @@ section {
     color: transparent;
     padding-left: 6rem;
     text-shadow: 0.5rem 0.6rem 2rem rgba(0, 0, 0, 0.6);
-    transition: all 0.2s; }
+    transition: all 0.3s; }
     .nav__title:hover {
       transform: scale(1.05) translateY(-0.1rem);
       text-shadow: 0.5rem 1rem 1rem rgba(0, 60, 73, 0.9); }
@@ -101,7 +102,7 @@ section {
     transition: all 0.2s; }
   .nav__item {
     padding: 0 1rem;
-    transition: transform 0.2s; }
+    transition: transform 0.3s; }
     .nav__item:not(:last-child) {
       margin-right: 7rem; }
     .nav__item:hover {
@@ -154,9 +155,14 @@ main:hover ~ .header .nav {
 .description__img {
   flex: 0 0 30%;
   text-align: center;
+  z-index: 1;
   transition: all 0.3s; }
   .description__img:hover {
     transform: scale(1.4); }
+    .description__img:hover + .description__text {
+      transform: translateX(5rem); }
+      .description__img:hover + .description__text--left {
+        transform: translateX(-5rem); }
 
 .description__vl {
   max-height: 90vh; }
@@ -164,7 +170,7 @@ main:hover ~ .header .nav {
 .description__text {
   flex: 1 0 50%;
   align-self: center;
-  width: 50%; }
+  transition: all .3s; }
 
 .description__paragraph {
   font-size: 1.6rem;
@@ -173,7 +179,7 @@ main:hover ~ .header .nav {
 
 .video__wrap {
   width: 75%;
-  margin: 5rem auto; }
+  margin: 3rem auto; }
 
 .video__container {
   float: none;
@@ -247,15 +253,15 @@ main:hover ~ .header .nav {
       box-shadow: 0 1rem 3rem rgba(0, 60, 73, 0.1); }
   .form__btn {
     display: block;
-    margin: 4rem auto 0; }
+    margin: 4rem auto 0;
+    padding: 2rem 5rem; }
 
 .btn {
   color: #005162;
   font-size: 2.5rem;
-  padding: 2rem 5rem;
   border: none;
   border-radius: 10rem;
-  background-color: #FB861F;
+  background-image: linear-gradient(to right bottom, #FB861F, #ffeee0);
   box-shadow: 0 0.5rem 1rem rgba(0, 60, 73, 0.3);
   transition: all 0.2s; }
   .btn:hover, .btn:focus {
@@ -277,3 +283,10 @@ main:hover ~ .header .nav {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent; }
+
+.link, .link:active, .link:visited {
+  text-decoration: none;
+  color: #AF5404; }
+
+.link:hover {
+  color: #FB861F; }
