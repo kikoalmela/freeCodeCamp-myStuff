@@ -4,7 +4,7 @@
 
   &__btn {
     margin: 0 auto;
-    padding: 2rem 2rem;
+    padding: 2rem 4rem;
     position: absolute;
     bottom: 14%;
     right: 8%;
@@ -315,7 +315,6 @@ main:hover ~ .header .nav {
 .btn {
   color: $color-primary;
   font-size: 2.5rem;
-  border: none;
   border-radius: 10rem;
   background-image: linear-gradient(
       to right bottom,
@@ -328,6 +327,7 @@ main:hover ~ .header .nav {
   &:hover,
   &:focus {
     outline: none;
+    border: none;
     transform: scale(1.1);
     box-shadow: 0 1rem 1.5rem rgba($color-primary-dark, 0.3);
   }
@@ -335,6 +335,7 @@ main:hover ~ .header .nav {
   &:active {
     transform: scale(1.1) translateY(0.2rem);
     box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.3);
+    border: none;
   }
 }
 
