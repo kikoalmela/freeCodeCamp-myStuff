@@ -35,7 +35,7 @@ body {
   order: -1; }
   .header__img {
     width: 100%; }
-    @media only screen and (orientation: landscape) and (min-width: 1024px) and (max-width: 1366px) {
+    @media handheld and (orientation: landscape) and (min-width: 1024px) and (max-width: 1366px) {
       .header__img {
         margin-top: 7rem; } }
     @media only screen and (max-width: 37.5em) {
@@ -62,10 +62,6 @@ body {
     main:hover ~ .header .nav__list {
       font-size: 1.5rem; } }
 
-section {
-  width: 80%;
-  margin: 5rem auto; }
-
 :target:before {
   content: "";
   display: block;
@@ -73,6 +69,10 @@ section {
   /* fixed navbar height*/
   margin: -7rem 0 0;
   /* negative fixed navbar height */ }
+
+section {
+  width: 80%;
+  margin: 5rem auto; }
 
 picture {
   width: 100px; }
