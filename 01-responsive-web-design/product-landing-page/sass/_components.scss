@@ -1,16 +1,20 @@
 //////////////////////////////////////////////////
 // HEADER
 .header {
-
   &__btn {
     margin: 0 auto;
     padding: 2rem 4rem;
     position: absolute;
-    bottom: 14%;
+    top: 20%;
     right: 8%;
+
+    @include respond(phone) {
+      padding: 1rem 2rem;
+      right: 20%;
+      transform: translateX(50%);
+    }
   }
 }
-
 
 //////////////////////////////////////////////////
 // NAVBAR
@@ -23,6 +27,10 @@
   z-index: 2;
   transition: all 0.3s;
 
+  @include respond(phone) {
+    padding: 2rem 0;
+  }
+
   &__title {
     font-size: 4rem;
     font-weight: 400;
@@ -34,9 +42,23 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    padding-left: 6rem;
+    margin-left: 6rem;
     text-shadow: $text-shadow;
     transition: all 0.3s;
+
+    @include respond(tab-land) {
+      font-size: 2.6rem;
+    }
+
+    @include respond(tab-port) {
+      font-size: 2.3rem;
+      margin-left: 3rem;
+    }
+
+    @include respond(phone) {
+      font-size: 2rem;
+      margin-left: 3rem;
+    }
 
     &:hover {
       transform: scale(1.05) translateY(-0.1rem);
@@ -45,7 +67,7 @@
 
     &:active {
       transform: scale(1.025) translateY(0.1rem);
-      text-shadow: 0 0.25rem .5rem rgba($color-primary-dark, 0.9);
+      text-shadow: 0 0.25rem 0.5rem rgba($color-primary-dark, 0.9);
     }
   }
 
@@ -54,9 +76,22 @@
     font-weight: 700;
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-right: 7rem;
     transition: all 0.2s;
+
+    @include respond(tab-land) {
+      font-size: 1.7rem;
+      margin-right: 1rem;
+    }
+
+    @include respond(tab-port) {
+      font-size: 1.5rem;
+    }
+
+    @include respond(phone) {
+      font-size: 1.3rem;
+    }
   }
 
   &__item {
@@ -65,6 +100,14 @@
 
     &:not(:last-child) {
       margin-right: 7rem;
+
+      @include respond(tab-port) {
+        margin-right: 1rem;
+      }
+
+      @include respond(phone) {
+        margin-right: 0;
+      }
     }
 
     &:hover {
@@ -74,7 +117,7 @@
 
     &:active {
       transform: scale(1.025) translateY(0.1rem);
-      text-shadow: 0 0.25rem .5rem rgba($color-primary-dark, 0.9);
+      text-shadow: 0 0.25rem 0.5rem rgba($color-primary-dark, 0.9);
     }
   }
 
@@ -96,23 +139,6 @@
   }
 }
 
-main:hover ~ .header .nav {
-  height: 7rem;
-  padding: 1.5rem 0;
-  background: linear-gradient(
-    rgba($color-primary-dark, 1),
-    rgba($color-primary, 1) 65%,
-    rgba($color-primary-light, 1) 100%
-  );
-
-  &__title {
-    font-size: 2.5rem;
-  }
-
-  &__list {
-    font-size: 1.5rem;
-  }
-}
 
 //////////////////////////////////////////////////
 // HEADINGS
@@ -144,11 +170,16 @@ main:hover ~ .header .nav {
     &:nth-child(2n) {
       flex-direction: row-reverse;
       padding: 0;
+      
+      @media only screen and (orientation: portrait) {
+        flex-direction: column;
+      }
     }
-
-    /* @include respond(phone) {
+    
+    @media only screen and (orientation: portrait) {
       flex-direction: column;
-    } */
+      padding-right: 0;
+    }
   }
 
   &__img {
@@ -157,14 +188,16 @@ main:hover ~ .header .nav {
     z-index: 1;
     transition: all 0.3s;
 
-    &:hover {
-      transform: scale(1.4);
-
-      & + .description__text {
-        transform: translateX(5rem);
-
-        &--left {
-          transform: translateX(-5rem);
+    @media only screen and (hover: hover) {
+      &:hover {
+        transform: scale(1.4);
+  
+        & + .description__text {
+          transform: translateX(5rem);
+  
+          &--left {
+            transform: translateX(-5rem);
+          }
         }
       }
     }
@@ -172,17 +205,20 @@ main:hover ~ .header .nav {
 
   &__vl {
     max-height: 90vh;
+
+    @media only screen and (orientation: portrait) {
+      max-height: 80vh;
+    }
   }
 
   &__text {
     flex: 1 0 50%;
     align-self: center;
     // width: 50%;
-    transition: all .3s;
+    transition: all 0.3s;
   }
 
   &__paragraph {
-    font-size: 1.6rem;
     margin-top: 1.6rem;
     line-height: 2.5rem;
   }
@@ -191,10 +227,13 @@ main:hover ~ .header .nav {
 //////////////////////////////////////////////////
 // VIDEO
 .video {
-  
   &__wrap {
     width: 75%;
     margin: 3rem auto;
+
+    @media only screen and (orientation: portrait) {
+      width: 100%;
+    }
   }
 
   &__container {
@@ -206,7 +245,7 @@ main:hover ~ .header .nav {
     padding-top: 0;
     height: 0;
     overflow: hidden;
-    
+
     & iframe,
     & object,
     & embed {
@@ -315,12 +354,13 @@ main:hover ~ .header .nav {
 .btn {
   color: $color-primary;
   font-size: 2.5rem;
+  border: none;
   border-radius: 10rem;
   background-image: linear-gradient(
-      to right bottom,
-      $color-secondary-light,
-      $color-light
-    );
+    to right bottom,
+    $color-secondary-light,
+    $color-light
+  );
   box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.3);
   transition: all 0.2s;
 
@@ -365,11 +405,9 @@ main:hover ~ .header .nav {
   }
 }
 
-
 //////////////////////////////////////////////////
 // LINK
 .link {
-  
   &,
   &:active,
   &:visited {

@@ -32,22 +32,35 @@ body {
   color: rgba(0, 60, 73, 0.9); }
 
 .header {
-  order: -1;
-  width: 100%;
-  position: relative;
-  /* background-image: url(../img/Baroque_violin-hero.jpg);
-  background-attachment: scroll;
-  background-size: 100%;
-  background-position: bottom;
-  background-repeat: no-repeat; */ }
+  order: -1; }
   .header__img {
-    width: 100%;
-    height: 100%; }
+    width: 100%; }
+    @media only screen and (orientation: landscape) and (min-width: 1024px) and (max-width: 1366px) {
+      .header__img {
+        margin-top: 7rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .header__img {
+        margin-top: 1rem; } }
   .header .nav {
     position: fixed;
     background: linear-gradient(#003C49, rgba(0, 60, 73, 0.85) 25%, rgba(0, 81, 98, 0.8) 50%, rgba(0, 81, 98, 0.675) 62.5%, rgba(0, 81, 98, 0.45) 75%, rgba(4, 145, 175, 0.225) 87.5%, rgba(4, 145, 175, 0));
     width: 100%;
     height: 15rem; }
+    @media (hover: none) {
+      .header .nav {
+        height: 7rem;
+        padding: 1.5rem 0;
+        background: linear-gradient(#003c49, #005162 65%, #0491af 100%); } }
+
+@media (hover: hover) {
+  main:hover ~ .header .nav {
+    height: 7rem;
+    padding: 1.5rem 0;
+    background: linear-gradient(#003c49, #005162 65%, #0491af 100%); }
+    main:hover ~ .header .nav__title {
+      font-size: 2.5rem; }
+    main:hover ~ .header .nav__list {
+      font-size: 1.5rem; } }
 
 section {
   width: 80%;
@@ -61,12 +74,20 @@ section {
   margin: -7rem 0 0;
   /* negative fixed navbar height */ }
 
+picture {
+  width: 100px; }
+
 .header__btn {
   margin: 0 auto;
   padding: 2rem 4rem;
   position: absolute;
-  bottom: 14%;
+  top: 20%;
   right: 8%; }
+  @media only screen and (max-width: 37.5em) {
+    .header__btn {
+      padding: 1rem 2rem;
+      right: 20%;
+      transform: translateX(50%); } }
 
 .nav {
   font-family: "Cinzel Decorative", cursive;
@@ -76,6 +97,9 @@ section {
   padding: 3rem 0;
   z-index: 2;
   transition: all 0.3s; }
+  @media only screen and (max-width: 37.5em) {
+    .nav {
+      padding: 2rem 0; } }
   .nav__title {
     font-size: 4rem;
     font-weight: 400;
@@ -83,9 +107,20 @@ section {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    padding-left: 6rem;
+    margin-left: 6rem;
     text-shadow: 0.5rem 0.6rem 2rem rgba(0, 0, 0, 0.6);
     transition: all 0.3s; }
+    @media only screen and (max-width: 75em) {
+      .nav__title {
+        font-size: 2.6rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .nav__title {
+        font-size: 2.3rem;
+        margin-left: 3rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .nav__title {
+        font-size: 2rem;
+        margin-left: 3rem; } }
     .nav__title:hover {
       transform: scale(1.05) translateY(-0.1rem);
       text-shadow: 0.5rem 1rem 1rem rgba(0, 60, 73, 0.9); }
@@ -97,14 +132,30 @@ section {
     font-weight: 700;
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-right: 7rem;
     transition: all 0.2s; }
+    @media only screen and (max-width: 75em) {
+      .nav__list {
+        font-size: 1.7rem;
+        margin-right: 1rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .nav__list {
+        font-size: 1.5rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .nav__list {
+        font-size: 1.3rem; } }
   .nav__item {
     padding: 0 1rem;
     transition: transform 0.3s; }
     .nav__item:not(:last-child) {
       margin-right: 7rem; }
+      @media only screen and (max-width: 56.25em) {
+        .nav__item:not(:last-child) {
+          margin-right: 1rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .nav__item:not(:last-child) {
+          margin-right: 0; } }
     .nav__item:hover {
       transform: scale(1.05) translateY(-0.1rem);
       text-shadow: 0.5rem 0.5rem 1rem rgba(0, 60, 73, 0.9); }
@@ -119,15 +170,6 @@ section {
     text-decoration: none; }
     .nav__link:link:hover, .nav__link:visited:hover {
       color: #FB861F; }
-
-main:hover ~ .header .nav {
-  height: 7rem;
-  padding: 1.5rem 0;
-  background: linear-gradient(#003c49, #005162 65%, #0491af 100%); }
-  main:hover ~ .header .nav__title {
-    font-size: 2.5rem; }
-  main:hover ~ .header .nav__list {
-    font-size: 1.5rem; }
 
 .heading-secondary {
   font-family: "Bad Script", cursive;
@@ -144,42 +186,52 @@ main:hover ~ .header .nav {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-right: 8rem;
-  /* @include respond(phone) {
-      flex-direction: column;
-    } */ }
+  padding-right: 8rem; }
   .description__box:nth-child(2n) {
     flex-direction: row-reverse;
     padding: 0; }
+    @media only screen and (orientation: portrait) {
+      .description__box:nth-child(2n) {
+        flex-direction: column; } }
+  @media only screen and (orientation: portrait) {
+    .description__box {
+      flex-direction: column;
+      padding-right: 0; } }
 
 .description__img {
   flex: 0 0 30%;
   text-align: center;
   z-index: 1;
   transition: all 0.3s; }
-  .description__img:hover {
-    transform: scale(1.4); }
-    .description__img:hover + .description__text {
-      transform: translateX(5rem); }
-      .description__img:hover + .description__text--left {
-        transform: translateX(-5rem); }
+  @media only screen and (hover: hover) {
+    .description__img:hover {
+      transform: scale(1.4); }
+      .description__img:hover + .description__text {
+        transform: translateX(5rem); }
+        .description__img:hover + .description__text--left {
+          transform: translateX(-5rem); } }
 
 .description__vl {
   max-height: 90vh; }
+  @media only screen and (orientation: portrait) {
+    .description__vl {
+      max-height: 80vh; } }
 
 .description__text {
   flex: 1 0 50%;
   align-self: center;
-  transition: all .3s; }
+  transition: all 0.3s; }
 
 .description__paragraph {
-  font-size: 1.6rem;
   margin-top: 1.6rem;
   line-height: 2.5rem; }
 
 .video__wrap {
   width: 75%;
   margin: 3rem auto; }
+  @media only screen and (orientation: portrait) {
+    .video__wrap {
+      width: 100%; } }
 
 .video__container {
   float: none;
@@ -259,6 +311,7 @@ main:hover ~ .header .nav {
 .btn {
   color: #005162;
   font-size: 2.5rem;
+  border: none;
   border-radius: 10rem;
   background-image: linear-gradient(to right bottom, #FB861F, #ffeee0);
   box-shadow: 0 0.5rem 1rem rgba(0, 60, 73, 0.3);

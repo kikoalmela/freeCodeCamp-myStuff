@@ -8,20 +8,17 @@ body {
 
 .header {
   order: -1;
-  width: 100%;
-  position: relative;
-  // height: 80vh;
-  // overflow: hidden;
-  /* background-image: url(../img/Baroque_violin-hero.jpg);
-  background-attachment: scroll;
-  background-size: 100%;
-  background-position: bottom;
-  background-repeat: no-repeat; */
 
   &__img {
-    // display: block;
     width: 100%;
-    height: 100%;
+
+    @media only screen and (orientation: landscape) and (min-width: 1024px) and (max-width: 1366px) {
+      margin-top: 7rem;
+    }
+
+    @include respond(phone) {
+      margin-top: 1rem;
+    }
   }
 
   .nav {
@@ -35,6 +32,38 @@ body {
                                 rgba($color-primary-light, 0));
     width: 100%;
     height: 15rem;
+    
+    @media (hover: none) {
+      height: 7rem;
+      padding: 1.5rem 0;
+      background: linear-gradient(
+        rgba($color-primary-dark, 1),
+        rgba($color-primary, 1) 65%,
+        rgba($color-primary-light, 1) 100%
+      );
+    }
+  }
+}
+
+//////////////////////////////////////////////////
+// NAVBAR NOT HEADER
+@media (hover: hover) {
+  main:hover ~ .header .nav {
+    height: 7rem;
+    padding: 1.5rem 0;
+    background: linear-gradient(
+      rgba($color-primary-dark, 1),
+      rgba($color-primary, 1) 65%,
+      rgba($color-primary-light, 1) 100%
+    );
+  
+    &__title {
+      font-size: 2.5rem;
+    }
+  
+    &__list {
+      font-size: 1.5rem;
+    }
   }
 }
 
@@ -50,3 +79,6 @@ section {
   margin: -7rem 0 0; /* negative fixed navbar height */
 }
 
+picture {
+  width: 100px;
+}
