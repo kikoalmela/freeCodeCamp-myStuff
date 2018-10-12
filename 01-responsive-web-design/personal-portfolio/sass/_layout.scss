@@ -1,0 +1,16 @@
+//////////////////////////////////////
+// HEADER
+.header {
+  height: 100vh;
+  background-image: url("../img/hero-img.jpg");
+  background-size: cover;
+  background-position: bottom center;
+
+  .nav {
+    position: fixed;
+  }
+}
+
+.projects  {
+  height: 500px;
+}
