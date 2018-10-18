@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Niramit:300,300i,400,400i,700,700i|Poppins:200,300,400,400i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png"> -->
-
-
 
     <title>Personal Portfolio</title>
 </head>
@@ -19,27 +18,38 @@
 <body>
     <header class="header" id="welcome-section">
         <nav class="navbar" id="navbar">
-            <ul class="nav">
-                <li class="nav__item">
-                    <a href="#about" class="nav__link">about me</a>
-                    <a href="#projects" class="nav__link">projects</a>
-                    <a href="#contact" class="nav__link">contact</a>
+            <a href="#">
+                <img src="img/logo-small.png" alt="logo k a" class="navbar__logo">
+            </a>
+            <ul class="navbar__list">
+                <li class="navbar__item">
+                    <a href="#about" class="navbar__link">about me</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#projects" class="navbar__link">projects</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#contact" class="navbar__link">contact</a>
                 </li>
             </ul>
         </nav>
         <h1 class="header__title">Kiko Almela</h1>
+        <img src="img/logo.png" alt="logo kiko almela" class="header__logo">
     </header>
 
-    <section class="about" id="about">
-        About me
-    </section>
-    
-    <section class="projects" id="projects">
-        <div class="projects__tile project-tile">
-            <a href="#" class="projects__link">Project</a>
-        </div>
-    </section>
-    
+
+    <main class="container">
+        <section class="about" id="about">
+            About me
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="projects__tile project-tile">
+                <a href="#" class="projects__link">Project</a>
+            </div>
+        </section>
+    </main>
+
     <footer>
         <div class="footer__mail">
             <a href="mailto:kikoalmelagarcia@gmail.com" class="mail__link">email me</a>
@@ -53,7 +63,8 @@
             </a>
         </div>
         <div class="footer__copy">
-            &copy; <script type="text/JavaScript">document.write(new Date().getFullYear());</script> Kiko Almela
+            &copy;
+            <script type="text/JavaScript">document.write(new Date().getFullYear());</script> Kiko Almela
         </div>
     </footer>
     <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->

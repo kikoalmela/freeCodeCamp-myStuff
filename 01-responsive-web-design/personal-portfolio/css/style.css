@@ -24,9 +24,56 @@ html {
   height: 100vh;
   background-image: url("../img/hero-img.jpg");
   background-size: cover;
-  background-position: bottom center; }
-  .header .nav {
-    position: fixed; }
+  background-repeat: no-repeat;
+  background-position: bottom; }
+  @media only screen and (max-width: 56.25em) {
+    .header {
+      height: 120vw; } }
+  .header .navbar {
+    position: fixed;
+    height: 8rem;
+    width: 100%;
+    background-color: #171833;
+    z-index: 10; }
 
 .projects {
   height: 500px; }
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .navbar__logo {
+    height: 5.5rem;
+    margin-left: 6rem;
+    transition: ease .2s; }
+    .navbar__logo:hover {
+      transform: scale(1.1); }
+  .navbar__list {
+    list-style: none;
+    font-family: poppins;
+    font-size: 2.5rem;
+    font-weight: 200;
+    display: flex; }
+  .navbar__item {
+    margin-right: 6rem;
+    transition: ease .2s; }
+    .navbar__item:hover {
+      transform: scale(1.1); }
+  .navbar__link {
+    transition: ease .2s; }
+    .navbar__link:link, .navbar__link:active, .navbar__link:visited {
+      text-decoration: none;
+      color: #FFFCF2; }
+    .navbar__link:hover {
+      color: #FFE173; }
+
+.header {
+  position: relative; }
+  .header__title {
+    display: none; }
+  .header__logo {
+    height: 28rem;
+    position: absolute;
+    top: 12rem;
+    left: 17rem; }

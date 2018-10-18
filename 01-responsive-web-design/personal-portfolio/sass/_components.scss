@@ -1,0 +1,63 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    height: 5.5rem;
+    margin-left: 6rem;
+    transition: ease .2s;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    font-family: poppins;
+    font-size: 2.5rem;
+    font-weight: 200;
+
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 6rem;
+    transition: ease .2s;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    transition: ease .2s;
+
+    &:link,
+    &:active,
+    &:visited {
+      text-decoration: none;
+      color: $color-light;
+    }
+
+    &:hover {
+      color: $color-secondary-light;
+    }
+  }
+}
+
+.header {
+  position: relative;
+
+  &__title {
+    display: none;
+  }
+
+  &__logo {
+    height: 28rem;
+    position: absolute;
+    top: 12rem;
+    left: 17rem;
+  }
+}
