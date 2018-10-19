@@ -104,9 +104,9 @@
 //   margin: -19rem 0 0; /* negative fixed header height */
 // }
 
-:target:not(#navbar){
+/* :target:not(#navbar){
   @include respond(tab-port) {
     padding-top: 19rem;
     margin: -19rem 0 0;
   }
-}
+} */
