@@ -20,6 +20,34 @@ html {
     html {
       font-size: 75%; } }
 
+body {
+  font-family: 'Niramit', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.8rem;
+  color: #4C4B45; }
+
+.heading-2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 4rem;
+  font-weight: 300;
+  color: #B8A254;
+  text-transform: capitalize;
+  font-style: italic;
+  letter-spacing: .5rem;
+  text-align: center;
+  margin-bottom: 6rem; }
+
+.heading-3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.3rem;
+  letter-spacing: .5rem;
+  font-weight: 300;
+  color: #B8A254;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 4rem; }
+
 .header {
   height: 100vh;
   background-image: url("../img/hero-img.jpg");
@@ -38,6 +66,24 @@ html {
 
 .projects {
   height: 500px; }
+
+:target::before {
+  content: "";
+  display: block;
+  height: 8rem;
+  /* fixed navbar height*/
+  margin: -8rem 0 0;
+  /* negative fixed navbar height */ }
+
+.header {
+  position: relative; }
+  .header__title {
+    display: none; }
+  .header__logo {
+    height: 28rem;
+    position: absolute;
+    top: 12rem;
+    left: 17rem; }
 
 .navbar {
   display: flex;
@@ -68,12 +114,51 @@ html {
     .navbar__link:hover {
       color: #FFE173; }
 
-.header {
-  position: relative; }
-  .header__title {
-    display: none; }
-  .header__logo {
-    height: 28rem;
-    position: absolute;
-    top: 12rem;
-    left: 17rem; }
+.about__container {
+  padding: 6rem 0; }
+
+.about__descriptions {
+  max-width: 120rem;
+  margin: 0 auto 3rem;
+  display: flex;
+  justify-content: space-between; }
+
+.about__description {
+  width: 20vw; }
+
+.about__title {
+  display: none; }
+
+.about__icon {
+  font-size: 6rem;
+  color: #383c7e;
+  display: inline-block;
+  width: 100%;
+  text-align: center; }
+
+.about__text {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  font-style: italic;
+  margin-top: 3.5rem; }
+
+.about__logos-container {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5rem; }
+
+.about__logo {
+  height: 8rem; }
+
+.portfolio__container {
+  background-color: #FAF2D4;
+  padding: 6rem 10rem; }
+
+.portfolio__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 2rem; }
+
+.portfolio__img {
+  width: 100%; }

@@ -5,9 +5,16 @@ $color-primary-dark: #292a5b;
 
 $color-secondary: #B8A254;
 $color-secondary-light: #FFE173;
+$color-secondary-bright: #FAF2D4;
 
-$color-light: #FFFCF2;
+$color-bright: #FFFCF2;
 $color-dark: #171833;
+
+$color-grey-light: #ccc7b4;
+$color-grey: #8c897e;
+$color-grey-dark: #4C4B45;
+
+$color-text: #4C4B45;
 
 // MEDIA QUERIES ===================
 @mixin respond($breakpoint) {
@@ -54,4 +61,37 @@ html {
   @include respond(big-desktop) {
     font-size: 75%; // 1rem = 12px -> 12/16 = 0.75
   }
+}
+
+//////////////////////////////////////
+// TYPOGRAPHY
+body {
+  font-family: 'Niramit', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.8rem;
+  color: $color-text;
+}
+
+.heading-2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 4rem;
+  font-weight: 300;
+  color: $color-secondary;
+  text-transform: capitalize;
+  font-style: italic;
+  letter-spacing: .5rem;
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.heading-3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.3rem;
+  letter-spacing: .5rem;
+  font-weight: 300;
+  color: $color-secondary;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 4rem;
 }

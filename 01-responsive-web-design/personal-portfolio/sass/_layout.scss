@@ -20,6 +20,22 @@
   }
 }
 
+//////////////////////////////////////
+// CONTAINER
+.container {
+  
+}
+
+//////////////////////////////////////
+// PROJECTS
 .projects  {
   height: 500px;
+}
+
+// Adjust target position after navbar
+:target::before {
+  content:"";
+  display: block;
+  height: 8rem; /* fixed navbar height*/
+  margin: -8rem 0 0; /* negative fixed navbar height */
 }

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css?family=Niramit:300,300i,400,400i,700,700i|Poppins:200,300,400,400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Niramit:200,200i,300,300i,400,400i,700,700i|Poppins:200,200i,300,300i,400,400i"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -26,7 +27,7 @@
                     <a href="#about" class="navbar__link">about me</a>
                 </li>
                 <li class="navbar__item">
-                    <a href="#projects" class="navbar__link">projects</a>
+                    <a href="#projects" class="navbar__link">Portfolio</a>
                 </li>
                 <li class="navbar__item">
                     <a href="#contact" class="navbar__link">contact</a>
@@ -40,12 +41,70 @@
 
     <main class="container">
         <section class="about" id="about">
-            About me
+            <div class="about__container">
+                <h2 class="heading-2">About me</h2>
+
+                <div class="about__descriptions">
+                    <div class="about__description">
+                        <h3 class="about__title">Person</h3>
+                        <i class="fas fa-user about__icon"></i>
+                        <p class="about__text">Passionate about life and people, I enjoy constant improvement and I
+                            nourish myself with continuous learning. I need sports for health, reading and cinema for
+                            the mind and family and friends for the soul.</p>
+                    </div>
+                    <div class="about__description">
+                        <h3 class="about__title">Coding</h3>
+                        <i class="fas fa-laptop-code about__icon"></i>
+                        <p class="about__text">I have always needed to understand how things work, to think about
+                            optimal solutions and to challenge my creativity. With the code and programming I feed that
+                            hunger and try helping to make the world a bit better.</p>
+                    </div>
+                    <div class="about__description">
+                        <h3 class="about__title">Musician</h3>
+                        <i class="fas fa-music about__icon"></i>
+                        <p class="about__text">I marvel when you get to feel and intuit the incomprehensible and
+                            intangible. That's why I've been giving concerts with my violin all my life. When I play
+                            Bach's music, I can hear and feel our world, written in a universal code, expressing that
+                            unapproachable by reason.</p>
+                    </div>
+                </div>
+
+                <div class="about__skills">
+                    <h3 class="heading-3">My skills</h3>
+                    <div class="about__logos-container">
+                        <img src="img/HTML5.svg" alt="html5 logo" class="about__logo">
+                        <img src="img/CSS3.svg" alt="css3 logo" class="about__logo">
+                        <img src="img/Sass.svg" alt="sass logo" class="about__logo">
+                        <img src="img/Javascript.svg" alt="JavaScript logo" class="about__logo">
+                        <img src="img/Nodejs.svg" alt="node js logo" class="about__logo">
+                        <img src="img/React.svg" alt="react logo" class="about__logo">
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="projects" id="projects">
-            <div class="projects__tile project-tile">
-                <a href="#" class="projects__link">Project</a>
+        <section class="portfolio" id="projects">
+            <div class="portfolio__container">
+                <h2 class="heading-2">Portfolio</h2>
+
+                <div class="portfolio__gallery">
+                    <div class="portfolio__tile project-tile">
+                        <img src="img/tribute.jpg" alt="tribute page" class="portfolio__img">
+                        <a href="#" class="portfolio__link">Project</a>
+                    </div>
+                    <div class="portfolio__tile project-tile">
+                        <img src="img/technical-docu.jpg" alt="technical documentation" class="portfolio__img">
+                        <a href="#" class="portfolio__link">Project</a>
+                    </div>
+                    <div class="portfolio__tile project-tile">
+                        <img src="img/survey-form.jpg" alt="survey form" class="portfolio__img">
+                        <a href="#" class="portfolio__link">Project</a>
+                    </div>
+                    <div class="portfolio__tile project-tile">
+                        <img src="img/product-landing-page.jpg" alt="product landing page" class="portfolio__img">
+                        <a href="#" class="portfolio__link">Project</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
