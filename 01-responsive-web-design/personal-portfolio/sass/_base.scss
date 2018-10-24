@@ -69,29 +69,33 @@ body {
   font-family: 'Niramit', sans-serif;
   font-size: 1.6rem;
   font-weight: 300;
-  line-height: 1.8rem;
+  line-height: 1.6;
   color: $color-text;
 }
 
-.heading-2 {
+%heading {
   font-family: 'Poppins', sans-serif;
-  font-size: 4rem;
+  color: $color-primary;
   font-weight: 300;
-  color: $color-secondary;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 .5rem 2rem rgba(#000, .2);
+}
+
+.heading-2 {
+  @extend %heading;
+  font-size: 4.5rem;
   text-transform: capitalize;
   font-style: italic;
   letter-spacing: .5rem;
-  text-align: center;
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
 }
 
 .heading-3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.3rem;
+  @extend %heading;
+  font-size: 2.5rem;
   letter-spacing: .5rem;
-  font-weight: 300;
   color: $color-secondary;
   text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }

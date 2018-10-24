@@ -72,17 +72,24 @@
 
   &__container {
     padding: 6rem 0;
+    max-width: 120rem;
+    margin: 0 auto;
+
+    @include respond(tab-land) {
+      padding: 5rem 3rem;
+    }
   }
 
   &__descriptions {
-    max-width: 120rem;
-    margin: 0 auto 3rem;
     display: flex;
     justify-content: space-between;
   }
 
-  &__description {
-    width: 20vw;
+  &__card {
+    width: 28%;
+    padding: 3rem 4rem;
+    border-radius: 2px;
+    box-shadow: 0 .6rem 2rem rgba(#000, .1);
   }
 
   &__title {
@@ -91,58 +98,103 @@
 
   &__icon {
     font-size: 6rem;
-    color: $color-primary;
+    color: $color-secondary;
     display: inline-block;
     width: 100%;
     text-align: center;
+    text-shadow: 0 .5rem 2rem rgba(#000, .1);
   }
 
   &__text {
     font-size: 1.8rem;
-    line-height: 2.5rem;
     font-style: italic;
     margin-top: 3.5rem;
   }
 
   &__skills {
-
+    padding-top: 4rem;
   }
 
   &__logos-container {
     display: flex;
-    justify-content: space-around;
-    padding-top: 5rem;
+    justify-content: space-between;
+    padding-top: 3rem;
   }
 
   &__logo {
-    height: 8rem;
+    height: 7rem;
+    width: 7rem;
+    font-size: 7rem;
+    color: $color-primary;
+    text-shadow: 0 1rem 2rem rgba(#000, .5);
   }
 }
 
 //////////////////////////////////////
 // PORTFOLIO
 .portfolio {
+  .heading-2 {
+    color: $color-secondary;
+  }
+
   &__container {
-    background-color: $color-secondary-bright;
+    background-color: $color-primary-dark;
     padding: 6rem 10rem;
   }
 
   &__gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr)); 
-    grid-row-gap: 2rem;
-    grid-column-gap: 2rem;
+    grid-gap: 10rem;
   }
 
   &__tile {
+    border-radius: 5px;
+    background-color: $color-bright;
+    box-shadow: 0 1rem 2rem rgba(#000, .1);
+    overflow: hidden;
   }
   
   &__img {
     width: 100%;
   }
+  
+  &__description {
+    padding: 1rem 6rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 300;
+    color: $color-primary;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+
+  &__tools {
+    display: flex;
+    justify-content: center;
+
+    p {
+      font-style: italic;
+    }
+  }
+
+  &__icon-tool {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
 
   &__link {
+    display: block;
+    width: 5rem;
+    margin: 1rem auto;
+    text-align: center;
+  }
 
-
+  &__icon-link {
+    font-size: 5rem;
+    color: $color-secondary;
   }
 }
