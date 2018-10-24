@@ -50,4 +50,16 @@ function diffArray(arr1, arr2) {
   return diffArray;
 }
 
+// Solution with filter
+function diffArray(arr1, arr2) {
+  let arrA = uniqueElements(arr1, arr2);
+  let arrA = uniqueElements(arr2, arr1);
+
+  function uniqueElements(sourceArr, seekedArr) {
+    return sourceArr.filter(el => !seekedArr.includes(el));
+  }
+
+  return arrA.concat(arrB);
+}
+
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
