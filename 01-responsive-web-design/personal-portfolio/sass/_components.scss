@@ -18,13 +18,15 @@
 //////////////////////////////////////
 // NAVBAR
 .navbar {
+  padding: 0 5rem;
+  box-shadow: 0 .2rem 5rem rgba(#000, .8);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   &__logo {
-    height: 5.5rem;
-    margin-left: 6rem;
+    height: 5rem;
     transition: ease .2s;
     
     &:hover {
@@ -42,8 +44,11 @@
   }
 
   &__item {
-    margin-right: 6rem;
     transition: ease .2s;
+    
+    &:not(:last-child) {
+      margin-right: 6rem;
+    }
     
     &:hover {
       transform: scale(1.1);
@@ -57,7 +62,7 @@
     &:active,
     &:visited {
       text-decoration: none;
-      color: $color-bright;
+      color: $color-secondary;
     }
 
     &:hover {
@@ -71,7 +76,7 @@
 .about {
 
   &__container {
-    padding: 6rem 0;
+    padding: 3.5rem 0 10rem;
     max-width: 120rem;
     margin: 0 auto;
 
@@ -138,25 +143,27 @@
   }
 
   &__container {
-    background-color: $color-primary-dark;
-    padding: 6rem 10rem;
+    background-color: $color-dark;
+    padding: 3.5rem 10rem 10rem;
   }
 
   &__gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr)); 
-    grid-gap: 10rem;
+    grid-row-gap: 2.5rem;
+    grid-column-gap: 3rem;
   }
 
   &__tile {
-    border-radius: 5px;
-    background-color: $color-bright;
-    box-shadow: 0 1rem 2rem rgba(#000, .1);
+    padding: 2rem 2rem 0;
+    background-color: $color-dark;
     overflow: hidden;
   }
   
   &__img {
     width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 .5rem 3rem rgba(#000, .9);
   }
   
   &__description {
@@ -166,7 +173,7 @@
   &__title {
     font-size: 2rem;
     font-weight: 300;
-    color: $color-primary;
+    color: $color-secondary-light;
     text-align: center;
     margin-bottom: 1rem;
   }
@@ -175,6 +182,8 @@
   &__tools {
     display: flex;
     justify-content: center;
+    color: $color-secondary;
+    padding-bottom: 1rem;
 
     p {
       font-style: italic;
@@ -187,14 +196,185 @@
   }
 
   &__link {
-    display: block;
-    width: 5rem;
-    margin: 1rem auto;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &,
+    &:hover,
+    &:active,
+    &:visited {
+      text-decoration: none;
+      color: $color-secondary;
+    }
+  }
+  
+  &__icon-link {
+    font-size: 3rem;
+    width: 3rem;
+    margin-right: 1rem;
+  }
+}
+
+//////////////////////////////////////////////////
+// CONTACT
+.contact {
+
+  &__container {
+    padding: 3.5rem 2rem 5rem;
+  }
+}
+
+// FORM
+.form {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 5rem 0 3rem;
+  border-radius: 5px;
+  background-color: lighten($color-primary-light, 20);
+
+  &__group {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
   }
 
-  &__icon-link {
-    font-size: 5rem;
+  &__input,
+  &__label {
+    display: block;
+    width: 75%;
+    margin: 0 auto 0.4rem;
+  }
+
+  &__input {
+    font-family: inherit;
+    font-size: 1.8rem;
+    color: rgba($color-text, 0.8);
+    padding: 1rem;
+    border: none;
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $color-primary-light;
+      box-shadow: 0 1rem 3rem rgba($color-primary-dark, 0.1);
+    }
+
+    &:invalid {
+      border-bottom: 1px solid orangered;
+    }
+
+    &::-webkit-input-placeholder {
+      color: rgba($color-primary-light, 0.6);
+    }
+  }
+
+  &__label {
+    color: rgba($color-primary-dark, 0.6);
+    transform: translate(1.2rem, 0);
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    transform: translate(1.2rem, -3.5rem);
+    opacity: 0;
+  }
+
+  &__comments-box {
+    resize: none;
+    border: none;
+    width: 75%;
+    height: 10rem;
+    margin: 0 auto;
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 1rem;
+    color: rgba($color-text, 0.8);
+
+    &::-webkit-input-placeholder {
+      color: rgba($color-primary-light, 0.6);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 3rem rgba($color-dark, 0.1);
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin: 4rem auto 0;
+  }
+}
+
+//////////////////////////////////////////////////
+// BUTTON
+.btn {
+  color: $color-primary;
+  font-size: 2.5rem;
+  border-color: $color-secondary;
+  border-radius: 5px;
+  padding: 1rem 3rem;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-secondary,
+    $color-secondary-light
+  );
+  box-shadow: 0 0.5rem 1rem rgba($color-dark, 0.3);
+  transition: all 0.2s;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    transform: scale(1.1);
+    box-shadow: 0 1rem 1.5rem rgba($color-dark, 0.3);
+  }
+
+  &:active {
+    transform: scale(1.1) translateY(0.2rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-dark, 0.3);
+  }
+}
+
+//////////////////////////////////////
+// FOOTER
+
+.footer {
+  background-color: $color-dark;
+  color: $color-secondary;
+  padding: 2.5rem 5rem 3rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__social-row {
+    display: flex;
+    justify-content: center;
+    grid-column: 2 / 3;
+  }
+  
+  &__social {
+    text-align: center;
+    font-size: 1.2rem;
+
+    &:not(:last-child) {
+      margin-right: 5rem;
+    }
+  }
+
+  &__link {
+
+  }
+  
+  &__icon {
+    font-size: 3.5rem;
+    width: 3.5rem;
     color: $color-secondary;
+
+  }
+
+  &__copy {
+    text-align: end;
+    align-self: end;
   }
 }
