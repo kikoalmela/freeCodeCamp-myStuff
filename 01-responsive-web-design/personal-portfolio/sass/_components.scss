@@ -12,6 +12,12 @@
     position: absolute;
     top: 12rem;
     left: 17rem;
+
+    @media screen and (orientation: portrait) {
+      height: 45vw;
+      top: 30vw;
+      left: 20vw;
+    }
   }
 }
 
@@ -44,29 +50,29 @@
   }
 
   &__item {
-    transition: ease .2s;
     
     &:not(:last-child) {
       margin-right: 6rem;
     }
-    
-    &:hover {
-      transform: scale(1.1);
-    }
   }
 
   &__link {
-    transition: ease .2s;
+    transition: ease .3s;
 
     &:link,
-    &:active,
     &:visited {
       text-decoration: none;
       color: $color-secondary;
+      background-image: linear-gradient(to right, rgba($color-secondary, 0), rgba($color-secondary, 1), rgba($color-secondary, 0));
+      background-size: 0% 2px;
+      background-position: bottom;
+      background-repeat: no-repeat;
     }
 
-    &:hover {
+    &:hover,
+    &:active {
       color: $color-secondary-light;
+      background-size: 100% 2px;
     }
   }
 }
@@ -88,6 +94,10 @@
   &__descriptions {
     display: flex;
     justify-content: space-between;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
   }
 
   &__card {
@@ -95,6 +105,23 @@
     padding: 3rem 4rem;
     border-radius: 2px;
     box-shadow: 0 .6rem 2rem rgba(#000, .1);
+
+    @include respond(tab-port) {
+      width: 70%;
+      align-self: center;
+
+      &:not(:last-child) {
+        margin-bottom: 8rem;
+      }
+    }
+    
+    @include respond(phone) {
+      width: 90%;
+
+      &:not(:last-child) {
+        margin-bottom: 6rem;
+      }
+    }
   }
 
   &__title {
@@ -123,15 +150,28 @@
   &__logos-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding-top: 3rem;
+
+    @include respond(tab-port) {
+      padding: 0 15%;
+    }
+
+    @include respond(phone) {
+      padding: 0 5%;
+    }
   }
 
   &__logo {
     height: 7rem;
     width: 7rem;
-    font-size: 7rem;
     color: $color-primary;
     text-shadow: 0 1rem 2rem rgba(#000, .5);
+
+    @include respond(phone) {
+      height: 5rem;
+      width: 5rem;
+    }
   }
 }
 
@@ -145,13 +185,41 @@
   &__container {
     background-color: $color-dark;
     padding: 3.5rem 10rem 10rem;
+
+    @include respond(tab-port) {
+      padding: 3rem 6rem 5rem;
+    }
+    
+    @include respond(phone) {
+      padding: 3rem 3rem 5rem;
+    }
   }
 
   &__gallery {
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr)); 
-    grid-row-gap: 2.5rem;
-    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    grid-column-gap: 8rem;
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    }
+
+    @include respond(tab-port) {
+      grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    }
+
+    @include respond(phone) {
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    }
+
+    @include respond(big-desktop) {
+      max-width: 2100px;
+      margin: 0 auto;
+
+      grid-template-columns: repeat(auto-fit, minmax(60rem, 1fr));
+    }
   }
 
   &__tile {
@@ -167,7 +235,7 @@
   }
   
   &__description {
-    padding: 1rem 6rem;
+    padding: 1rem 0;
   }
 
   &__title {
@@ -347,6 +415,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
+  @include respond(phone) {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__social-row {
     display: flex;
     justify-content: center;
@@ -376,5 +449,11 @@
   &__copy {
     text-align: end;
     align-self: end;
+
+    @include respond(phone) {
+      margin-top: 2rem;
+      text-align: center;
+      align-self: auto;
+    }
   }
 }

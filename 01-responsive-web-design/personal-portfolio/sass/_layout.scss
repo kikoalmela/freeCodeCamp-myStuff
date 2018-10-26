@@ -7,8 +7,9 @@
   background-repeat: no-repeat;
   background-position: bottom;
 
-  @include respond(tab-port) {
-    height: 120vw;
+  @media only screen and (orientation: portrait) {
+    height: 135vw;
+    background-image: url("../img/hero-img-port.jpg");
   }
 
   .navbar {

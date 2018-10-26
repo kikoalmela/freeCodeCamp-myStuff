@@ -33,19 +33,28 @@ body {
   font-weight: 300;
   line-height: 1;
   text-align: center;
-  text-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2); }
+  text-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  padding-bottom: .7rem;
+  background-image: linear-gradient(to right, rgba(184, 162, 84, 0.7), #b8a254 15%, rgba(184, 162, 84, 0));
+  background-size: 100% 2px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); }
 
 .heading-2 {
   font-size: 4.5rem;
   text-transform: capitalize;
   font-style: italic;
-  letter-spacing: .5rem;
+  letter-spacing: .4rem;
   margin-bottom: 5rem; }
 
 .heading-3 {
   font-size: 2.5rem;
-  letter-spacing: .5rem;
-  color: #B8A254;
+  letter-spacing: .3rem;
+  color: #383c7e;
   text-transform: uppercase;
   margin-bottom: 2rem; }
 
@@ -55,9 +64,10 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom; }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (orientation: portrait) {
     .header {
-      height: 120vw; } }
+      height: 135vw;
+      background-image: url("../img/hero-img-port.jpg"); } }
   .header .navbar {
     position: fixed;
     height: 6.5rem;
@@ -85,6 +95,11 @@ body {
     position: absolute;
     top: 12rem;
     left: 17rem; }
+    @media screen and (orientation: portrait) {
+      .header__logo {
+        height: 45vw;
+        top: 30vw;
+        left: 20vw; } }
 
 .navbar {
   padding: 0 5rem;
@@ -103,19 +118,20 @@ body {
     font-size: 2.5rem;
     font-weight: 200;
     display: flex; }
-  .navbar__item {
-    transition: ease .2s; }
-    .navbar__item:not(:last-child) {
-      margin-right: 6rem; }
-    .navbar__item:hover {
-      transform: scale(1.1); }
+  .navbar__item:not(:last-child) {
+    margin-right: 6rem; }
   .navbar__link {
-    transition: ease .2s; }
-    .navbar__link:link, .navbar__link:active, .navbar__link:visited {
+    transition: ease .3s; }
+    .navbar__link:link, .navbar__link:visited {
       text-decoration: none;
-      color: #B8A254; }
-    .navbar__link:hover {
-      color: #FFE173; }
+      color: #B8A254;
+      background-image: linear-gradient(to right, rgba(184, 162, 84, 0), #b8a254, rgba(184, 162, 84, 0));
+      background-size: 0% 2px;
+      background-position: bottom;
+      background-repeat: no-repeat; }
+    .navbar__link:hover, .navbar__link:active {
+      color: #FFE173;
+      background-size: 100% 2px; }
 
 .about__container {
   padding: 3.5rem 0 10rem;
@@ -128,12 +144,26 @@ body {
 .about__descriptions {
   display: flex;
   justify-content: space-between; }
+  @media only screen and (max-width: 56.25em) {
+    .about__descriptions {
+      flex-direction: column; } }
 
 .about__card {
   width: 28%;
   padding: 3rem 4rem;
   border-radius: 2px;
   box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.1); }
+  @media only screen and (max-width: 56.25em) {
+    .about__card {
+      width: 70%;
+      align-self: center; }
+      .about__card:not(:last-child) {
+        margin-bottom: 8rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .about__card {
+      width: 90%; }
+      .about__card:not(:last-child) {
+        margin-bottom: 6rem; } }
 
 .about__title {
   display: none; }
@@ -157,14 +187,24 @@ body {
 .about__logos-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding-top: 3rem; }
+  @media only screen and (max-width: 56.25em) {
+    .about__logos-container {
+      padding: 0 15%; } }
+  @media only screen and (max-width: 37.5em) {
+    .about__logos-container {
+      padding: 0 5%; } }
 
 .about__logo {
   height: 7rem;
   width: 7rem;
-  font-size: 7rem;
   color: #383c7e;
   text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5); }
+  @media only screen and (max-width: 37.5em) {
+    .about__logo {
+      height: 5rem;
+      width: 5rem; } }
 
 .portfolio .heading-2 {
   color: #B8A254; }
@@ -172,12 +212,32 @@ body {
 .portfolio__container {
   background-color: #171833;
   padding: 3.5rem 10rem 10rem; }
+  @media only screen and (max-width: 56.25em) {
+    .portfolio__container {
+      padding: 3rem 6rem 5rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .portfolio__container {
+      padding: 3rem 3rem 5rem; } }
 
 .portfolio__gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
-  grid-row-gap: 2.5rem;
-  grid-column-gap: 3rem; }
+  grid-row-gap: 3rem;
+  grid-column-gap: 8rem; }
+  @media only screen and (max-width: 75em) {
+    .portfolio__gallery {
+      grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr)); } }
+  @media only screen and (max-width: 56.25em) {
+    .portfolio__gallery {
+      grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)); } }
+  @media only screen and (max-width: 37.5em) {
+    .portfolio__gallery {
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); } }
+  @media only screen and (min-width: 112.5em) {
+    .portfolio__gallery {
+      max-width: 2100px;
+      margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(60rem, 1fr)); } }
 
 .portfolio__tile {
   padding: 2rem 2rem 0;
@@ -190,7 +250,7 @@ body {
   box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.9); }
 
 .portfolio__description {
-  padding: 1rem 6rem; }
+  padding: 1rem 0; }
 
 .portfolio__title {
   font-size: 2rem;
@@ -303,6 +363,10 @@ body {
   padding: 2.5rem 5rem 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr); }
+  @media only screen and (max-width: 37.5em) {
+    .footer {
+      display: flex;
+      flex-direction: column; } }
   .footer__social-row {
     display: flex;
     justify-content: center;
@@ -319,3 +383,8 @@ body {
   .footer__copy {
     text-align: end;
     align-self: end; }
+    @media only screen and (max-width: 37.5em) {
+      .footer__copy {
+        margin-top: 2rem;
+        text-align: center;
+        align-self: auto; } }
