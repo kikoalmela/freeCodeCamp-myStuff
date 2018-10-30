@@ -354,6 +354,8 @@ body {
   .portfolio__link, .portfolio__link:hover, .portfolio__link:active, .portfolio__link:visited {
     text-decoration: none;
     color: #B8A254; }
+    .portfolio__link p, .portfolio__link:hover p, .portfolio__link:active p, .portfolio__link:visited p {
+      text-decoration: underline; }
 
 .portfolio__icon-link {
   font-size: 3rem;

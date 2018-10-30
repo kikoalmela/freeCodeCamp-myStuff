@@ -390,6 +390,10 @@
     &:visited {
       text-decoration: none;
       color: $color-secondary;
+
+      p {
+        text-decoration: underline;
+      }
     }
   }
 
