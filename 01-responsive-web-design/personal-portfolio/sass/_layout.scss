@@ -8,16 +8,21 @@
   background-position: bottom;
 
   @media only screen and (orientation: portrait) {
-    height: 135vw;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     background-image: url("../img/hero-img-port.jpg");
   }
 
   .navbar {
     position: fixed;
-    height: 6.5rem;
+    min-height: 6.5rem;
     width: 100%;
     background-color: $color-dark;
     z-index: 10;
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
   }
 }
 
@@ -25,12 +30,6 @@
 // CONTAINER
 .container {
   
-}
-
-//////////////////////////////////////
-// PROJECTS
-.projects  {
-  height: 500px;
 }
 
 // Adjust target position after navbar

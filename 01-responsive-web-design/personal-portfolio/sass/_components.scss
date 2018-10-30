@@ -25,18 +25,82 @@
 // NAVBAR
 .navbar {
   padding: 0 5rem;
-  box-shadow: 0 .2rem 5rem rgba(#000, .8);
+  box-shadow: 0 0.2rem 5rem rgba(#000, 0.8);
+  position: relative;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+  @include respond(phone) {
+    padding-top: .6rem;
+  }
+
   &__logo {
-    height: 5rem;
-    transition: ease .2s;
-    
+    line-height: 0;
+    transition: 0.2s ease;
+
+    img {
+      height: 5rem;
+    }
+
     &:hover {
       transform: scale(1.1);
+    }
+
+    @include respond(phone) {
+      align-self: flex-start;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__btn {
+    background-color: transparent;
+    height: 6rem;
+    width: 6rem;
+    position: fixed;
+    top: 1rem;
+    right: 2.5rem;
+    z-index: 2000;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+
+    @include respond(phone) {
+      display: inline-block;
+    }
+  }
+
+  // ICON
+  &__icon {
+    position: relative;
+    margin-top: 2rem;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-secondary;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after,{
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -1rem;
+    }
+    &::after {
+      top: 1rem;
     }
   }
 
@@ -47,23 +111,48 @@
     font-weight: 200;
 
     display: flex;
+
+    // colapsed nav
+    @include respond(phone) {
+      height: 0;
+      z-index: 1500;
+      opacity: 0;
+      height: 0;
+      flex-direction: column;
+      justify-content: center;
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+      & .navbar__item {
+        padding: 2rem 0;
+        transform: scaleY(0);
+
+        &:not(:last-child) {
+          margin-right: 0;
+        }
+      }
+    }
   }
 
   &__item {
-    
+    transition: all 0.8s;
+
     &:not(:last-child) {
       margin-right: 6rem;
     }
   }
-
   &__link {
-    transition: ease .3s;
+    transition: ease 0.3s;
 
     &:link,
     &:visited {
       text-decoration: none;
       color: $color-secondary;
-      background-image: linear-gradient(to right, rgba($color-secondary, 0), rgba($color-secondary, 1), rgba($color-secondary, 0));
+      background-image: linear-gradient(
+        to right,
+        rgba($color-secondary, 0),
+        rgba($color-secondary, 1),
+        rgba($color-secondary, 0)
+      );
       background-size: 0% 2px;
       background-position: bottom;
       background-repeat: no-repeat;
@@ -75,12 +164,41 @@
       background-size: 100% 2px;
     }
   }
+
+  .active  {
+    color: $color-secondary-light;
+    background-size: 100% 2px;
+  }
+
+  // functionality
+  &__checkbox:checked + &__btn &__icon {
+    background-color: transparent;
+
+    &::before {
+      top: 0;
+      transform: rotate(135deg);
+    }
+
+    &::after {
+      top: 0;
+      transform: rotate(-135deg);
+    }
+  }
+
+  &__checkbox:checked ~ &__list {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    opacity: 1;
+
+    & .navbar__item {
+      transform: scaleY(1);
+    }
+  }
 }
 
 //////////////////////////////////////
 // ABOUT
 .about {
-
   &__container {
     padding: 3.5rem 0 10rem;
     max-width: 120rem;
@@ -104,7 +222,7 @@
     width: 28%;
     padding: 3rem 4rem;
     border-radius: 2px;
-    box-shadow: 0 .6rem 2rem rgba(#000, .1);
+    box-shadow: 0 0.6rem 2rem rgba(#000, 0.1);
 
     @include respond(tab-port) {
       width: 70%;
@@ -114,7 +232,7 @@
         margin-bottom: 8rem;
       }
     }
-    
+
     @include respond(phone) {
       width: 90%;
 
@@ -134,7 +252,7 @@
     display: inline-block;
     width: 100%;
     text-align: center;
-    text-shadow: 0 .5rem 2rem rgba(#000, .1);
+    text-shadow: 0 0.5rem 2rem rgba(#000, 0.1);
   }
 
   &__text {
@@ -166,7 +284,7 @@
     height: 7rem;
     width: 7rem;
     color: $color-primary;
-    text-shadow: 0 1rem 2rem rgba(#000, .5);
+    text-shadow: 0 1rem 2rem rgba(#000, 0.5);
 
     @include respond(phone) {
       height: 5rem;
@@ -189,16 +307,15 @@
     @include respond(tab-port) {
       padding: 3rem 6rem 5rem;
     }
-    
+
     @include respond(phone) {
       padding: 3rem 3rem 5rem;
     }
   }
 
   &__gallery {
-
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
     grid-row-gap: 3rem;
     grid-column-gap: 8rem;
 
@@ -227,13 +344,13 @@
     background-color: $color-dark;
     overflow: hidden;
   }
-  
+
   &__img {
     width: 100%;
     border-radius: 3px;
-    box-shadow: 0 .5rem 3rem rgba(#000, .9);
+    box-shadow: 0 0.5rem 3rem rgba(#000, 0.9);
   }
-  
+
   &__description {
     padding: 1rem 0;
   }
@@ -245,7 +362,6 @@
     text-align: center;
     margin-bottom: 1rem;
   }
-
 
   &__tools {
     display: flex;
@@ -267,7 +383,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     &,
     &:hover,
     &:active,
@@ -276,7 +392,7 @@
       color: $color-secondary;
     }
   }
-  
+
   &__icon-link {
     font-size: 3rem;
     width: 3rem;
@@ -287,7 +403,6 @@
 //////////////////////////////////////////////////
 // CONTACT
 .contact {
-
   &__container {
     padding: 3.5rem 2rem 5rem;
   }
@@ -425,7 +540,7 @@
     justify-content: center;
     grid-column: 2 / 3;
   }
-  
+
   &__social {
     text-align: center;
     font-size: 1.2rem;
@@ -436,14 +551,12 @@
   }
 
   &__link {
-
   }
-  
+
   &__icon {
     font-size: 3.5rem;
     width: 3.5rem;
     color: $color-secondary;
-
   }
 
   &__copy {

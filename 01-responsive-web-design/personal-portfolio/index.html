@@ -13,15 +13,23 @@
 
     <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png"> -->
 
+    <script src="index.js"></script>
+
     <title>Personal Portfolio</title>
 </head>
 
 <body>
     <header class="header" id="welcome-section">
         <nav class="navbar" id="navbar">
-            <a href="#">
-                <img src="img/logo-small.png" alt="logo k a" class="navbar__logo">
+            <a href="#" class="navbar__logo">
+                <img src="img/logo-small.png" alt="logo k a" class="navbar__logo-img">
             </a>
+
+            <input type="checkbox" name="" id="navi-toggle" class="navbar__checkbox">
+            <label for="navi-toggle" class="navbar__btn">
+                <span class="navbar__icon">&nbsp;</span>
+            </label>
+
             <ul class="navbar__list">
                 <li class="navbar__item">
                     <a href="#about" class="navbar__link">about me</a>
@@ -33,6 +41,7 @@
                     <a href="#contact" class="navbar__link">contact</a>
                 </li>
             </ul>
+            
         </nav>
         <h1 class="header__title">Kiko Almela</h1>
         <img src="img/logo.png" alt="logo kiko almela" class="header__logo">

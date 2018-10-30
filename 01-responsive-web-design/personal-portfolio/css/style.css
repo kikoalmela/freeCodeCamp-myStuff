@@ -66,17 +66,18 @@ body {
   background-position: bottom; }
   @media only screen and (orientation: portrait) {
     .header {
-      height: 135vw;
+      height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
       background-image: url("../img/hero-img-port.jpg"); } }
   .header .navbar {
     position: fixed;
-    height: 6.5rem;
+    min-height: 6.5rem;
     width: 100%;
     background-color: #171833;
     z-index: 10; }
-
-.projects {
-  height: 500px; }
+    @media only screen and (max-width: 37.5em) {
+      .header .navbar {
+        flex-direction: column; } }
 
 :target::before {
   content: "";
@@ -104,24 +105,82 @@ body {
 .navbar {
   padding: 0 5rem;
   box-shadow: 0 0.2rem 5rem rgba(0, 0, 0, 0.8);
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between; }
+  @media only screen and (max-width: 37.5em) {
+    .navbar {
+      padding-top: .6rem; } }
   .navbar__logo {
-    height: 5rem;
-    transition: ease .2s; }
+    line-height: 0;
+    transition: 0.2s ease; }
+    .navbar__logo img {
+      height: 5rem; }
     .navbar__logo:hover {
       transform: scale(1.1); }
+    @media only screen and (max-width: 37.5em) {
+      .navbar__logo {
+        align-self: flex-start; } }
+  .navbar__checkbox {
+    display: none; }
+  .navbar__btn {
+    background-color: transparent;
+    height: 6rem;
+    width: 6rem;
+    position: fixed;
+    top: 1rem;
+    right: 2.5rem;
+    z-index: 2000;
+    text-align: center;
+    cursor: pointer;
+    display: none; }
+    @media only screen and (max-width: 37.5em) {
+      .navbar__btn {
+        display: inline-block; } }
+  .navbar__icon {
+    position: relative;
+    margin-top: 2rem; }
+    .navbar__icon, .navbar__icon::before, .navbar__icon::after {
+      width: 3rem;
+      height: 2px;
+      background-color: #B8A254;
+      display: inline-block; }
+    .navbar__icon::before, .navbar__icon::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s; }
+    .navbar__icon::before {
+      top: -1rem; }
+    .navbar__icon::after {
+      top: 1rem; }
   .navbar__list {
     list-style: none;
     font-family: poppins;
     font-size: 2.5rem;
     font-weight: 200;
     display: flex; }
-  .navbar__item:not(:last-child) {
-    margin-right: 6rem; }
+    @media only screen and (max-width: 37.5em) {
+      .navbar__list {
+        height: 0;
+        z-index: 1500;
+        opacity: 0;
+        height: 0;
+        flex-direction: column;
+        justify-content: center;
+        transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        .navbar__list .navbar__item {
+          padding: 2rem 0;
+          transform: scaleY(0); }
+          .navbar__list .navbar__item:not(:last-child) {
+            margin-right: 0; } }
+  .navbar__item {
+    transition: all 0.8s; }
+    .navbar__item:not(:last-child) {
+      margin-right: 6rem; }
   .navbar__link {
-    transition: ease .3s; }
+    transition: ease 0.3s; }
     .navbar__link:link, .navbar__link:visited {
       text-decoration: none;
       color: #B8A254;
@@ -132,6 +191,23 @@ body {
     .navbar__link:hover, .navbar__link:active {
       color: #FFE173;
       background-size: 100% 2px; }
+  .navbar .active {
+    color: #FFE173;
+    background-size: 100% 2px; }
+  .navbar__checkbox:checked + .navbar__btn .navbar__icon {
+    background-color: transparent; }
+    .navbar__checkbox:checked + .navbar__btn .navbar__icon::before {
+      top: 0;
+      transform: rotate(135deg); }
+    .navbar__checkbox:checked + .navbar__btn .navbar__icon::after {
+      top: 0;
+      transform: rotate(-135deg); }
+  .navbar__checkbox:checked ~ .navbar__list {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    opacity: 1; }
+    .navbar__checkbox:checked ~ .navbar__list .navbar__item {
+      transform: scaleY(1); }
 
 .about__container {
   padding: 3.5rem 0 10rem;
