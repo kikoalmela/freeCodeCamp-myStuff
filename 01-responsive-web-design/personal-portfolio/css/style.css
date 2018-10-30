@@ -68,7 +68,7 @@ body {
     .header {
       height: 100vh;
       height: calc(var(--vh, 1vh) * 100);
-      background-image: url("../img/hero-img-port.jpg"); } }
+      background-image: url("../img/hero-img-portrait.jpg"); } }
   .header .navbar {
     position: fixed;
     min-height: 6.5rem;
@@ -92,15 +92,15 @@ body {
   .header__title {
     display: none; }
   .header__logo {
-    height: 28rem;
+    height: 32vh;
     position: absolute;
-    top: 12rem;
-    left: 17rem; }
+    top: 16vh;
+    left: 14vw; }
     @media screen and (orientation: portrait) {
       .header__logo {
-        height: 45vw;
-        top: 30vw;
-        left: 20vw; } }
+        height: 28vh;
+        top: 18vh;
+        left: 18vw; } }
 
 .navbar {
   padding: 0 5rem;
