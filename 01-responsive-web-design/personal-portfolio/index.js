@@ -22,7 +22,7 @@ window.onload = function() {
 
   setVhVariable();
 
-  // --vh update on window resize
+  // --vh update on window resize.
   // window.addEventListener("resize", setVhVariable);
 
   window.onscroll = highlightMenuBySection;
