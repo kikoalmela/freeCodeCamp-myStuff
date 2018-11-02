@@ -22,7 +22,10 @@
   @media only screen and (orientation: portrait) {
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
-    background-image: url('../img/hero-img-portrait.jpg');
+    
+    &::after {
+      background-image: url('../img/hero-img-portrait.jpg');
+    }
   }
 }
 

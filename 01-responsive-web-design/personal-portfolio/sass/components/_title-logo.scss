@@ -10,24 +10,7 @@
   top: 16vh;
   left: 14vw;
   z-index: 1;
-  animation: fadeIn 3s ease-in;
-
-  @keyframes moveInLeft {
-    0% {
-      opacity: 0;
-      transform: translate(30vh, 50vh);
-    }
-    
-    30% {
-      opacity: 0;
-      transform: translate(30vh, 50vh);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+  animation: fadeIn 2.5s ease-in;
 
   @media screen and (orientation: portrait) {
     height: 28vh;
