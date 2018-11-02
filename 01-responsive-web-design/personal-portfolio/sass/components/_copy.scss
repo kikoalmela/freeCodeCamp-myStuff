@@ -1,0 +1,12 @@
+//////////////////////////////////////////////////
+// COPY
+.copy {
+  text-align: end;
+  align-self: end;
+
+  @include respond(phone) {
+    margin-top: 2rem;
+    text-align: center;
+    align-self: auto;
+  }
+}

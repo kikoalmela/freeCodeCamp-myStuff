@@ -1,0 +1,45 @@
+//////////////////////////////////////
+// TYPOGRAPHY
+body {
+  font-family: 'Niramit', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: $color-text;
+}
+
+%heading {
+  font-family: 'Poppins', sans-serif;
+  color: $color-primary;
+  font-weight: 300;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 .5rem 2rem rgba(#000, .2);
+  display: inline-block;
+  padding-bottom: .7rem;
+  background-image: linear-gradient(to right, rgba($color-secondary, .7), rgba($color-secondary, 1) 15%, rgba($color-secondary, 0));
+  background-size: 100% 2px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.heading-2 {
+  @extend %heading;
+  font-size: 4.5rem;
+  text-transform: capitalize;
+  font-style: italic;
+  letter-spacing: .4rem;
+  margin-bottom: 5rem;
+}
+
+.heading-3 {
+  @extend %heading;
+  font-size: 2.5rem;
+  letter-spacing: .3rem;
+  color: $color-primary;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}

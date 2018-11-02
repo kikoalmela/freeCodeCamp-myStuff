@@ -1,0 +1,45 @@
+//////////////////////////////////////
+// CARD
+.card {
+  width: 28%;
+  padding: 3rem 4rem;
+  border-radius: 2px;
+  box-shadow: 0 0.6rem 2rem rgba(#000, 0.1);
+
+  @include respond(tab-port) {
+    width: 70%;
+    align-self: center;
+
+    &:not(:last-child) {
+      margin-bottom: 8rem;
+    }
+  }
+
+  @include respond(phone) {
+    width: 90%;
+
+    &:not(:last-child) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  &__title {
+    display: none;
+  }
+
+  &__icon {
+    font-size: 6rem;
+    color: $color-secondary;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0 0.5rem 2rem rgba(#000, 0.1);
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-top: 3.5rem;
+  }
+}
+

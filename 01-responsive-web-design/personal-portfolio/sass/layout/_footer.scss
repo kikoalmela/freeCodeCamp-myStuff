@@ -1,0 +1,15 @@
+//////////////////////////////////////
+// FOOTER
+.footer {
+  background-color: $color-dark;
+  color: $color-secondary;
+  padding: 2.5rem 5rem 3rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @include respond(phone) {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,35 @@
+//////////////////////////////////////
+// HEADER
+.header {
+  height: 100vh;
+  position: relative;
+  background-color: $color-dark;
+
+  &::after {
+    content: '';
+    background-image: url('../img/hero-img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    animation: fadeIn 2s ease;
+  }
+
+  @media only screen and (orientation: portrait) {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    background-image: url('../img/hero-img-portrait.jpg');
+  }
+}
+
+// Adjust target position after navbar
+:target::before {
+  content: '';
+  display: block;
+  height: 6.5rem; /* fixed navbar height*/
+  margin: -6.5rem 0 0; /* negative fixed navbar height */
+}

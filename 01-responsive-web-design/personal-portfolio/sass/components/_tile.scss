@@ -1,0 +1,65 @@
+//////////////////////////////////////
+// TILE
+.tile {
+  padding: 2rem 2rem 0;
+  background-color: $color-dark;
+  overflow: hidden;
+
+  &__img {
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 0.5rem 3rem rgba(#000, 0.9);
+  }
+
+  &__description {
+    padding: 1rem 0;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 300;
+    color: $color-secondary-light;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__tools {
+    display: flex;
+    justify-content: center;
+    color: $color-secondary;
+    padding-bottom: 1rem;
+
+    p {
+      font-style: italic;
+    }
+  }
+
+  &__icon-tool {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &,
+    &:hover,
+    &:active,
+    &:visited {
+      text-decoration: none;
+      color: $color-secondary;
+
+      p {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__icon-link {
+    font-size: 3rem;
+    width: 3rem;
+    margin-right: 1rem;
+  }
+}

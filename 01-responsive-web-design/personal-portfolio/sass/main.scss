@@ -1,3 +1,23 @@
-@import "base";
-@import "layout";
-@import "components";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+@import "abstracts/animations";
+
+@import "base/base";
+@import "base/typography";
+
+@import "layout/header";
+@import "layout/about";
+@import "layout/portfolio";
+@import "layout/contact";
+@import "layout/footer";
+
+@import "components/title-logo";
+@import "components/navbar";
+@import "components/card";
+@import "components/toolset";
+@import "components/gallery";
+@import "components/tile";
+@import "components/form";
+@import "components/button";
+@import "components/social";
+@import "components/copy";

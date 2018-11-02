@@ -1,0 +1,20 @@
+//////////////////////////////////////
+// PORTFOLIO
+.portfolio {
+  .heading-2 {
+    color: $color-secondary;
+  }
+
+  &__container {
+    background-color: $color-dark;
+    padding: 3.5rem 10rem 10rem;
+
+    @include respond(tab-port) {
+      padding: 3rem 6rem 5rem;
+    }
+
+    @include respond(phone) {
+      padding: 3rem 3rem 5rem;
+    }
+  }
+}

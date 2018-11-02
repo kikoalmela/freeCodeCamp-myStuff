@@ -1,0 +1,28 @@
+//////////////////////////////////////////////////
+// BUTTON
+.btn {
+  color: $color-primary;
+  font-size: 2.5rem;
+  border-color: $color-secondary;
+  border-radius: 5px;
+  padding: 1rem 3rem;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-secondary,
+    $color-secondary-light
+  );
+  box-shadow: 0 0.5rem 1rem rgba($color-dark, 0.3);
+  transition: all 0.2s;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    transform: scale(1.1);
+    box-shadow: 0 1rem 1.5rem rgba($color-dark, 0.3);
+  }
+
+  &:active {
+    transform: scale(1.1) translateY(0.2rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-dark, 0.3);
+  }
+}

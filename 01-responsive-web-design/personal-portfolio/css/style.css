@@ -1,3 +1,9 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 * {
   margin: 0;
   padding: 0; }
@@ -61,15 +67,32 @@ body {
 .header {
   height: 100vh;
   position: relative;
-  background-image: url("../img/hero-img.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom; }
+  background-color: #171833; }
+  .header::after {
+    content: '';
+    background-image: url("../img/hero-img.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    animation: fadeIn 2s ease; }
   @media only screen and (orientation: portrait) {
     .header {
       height: 100vh;
       height: calc(var(--vh, 1vh) * 100);
       background-image: url("../img/hero-img-portrait.jpg"); } }
+
+:target::before {
+  content: '';
+  display: block;
+  height: 6.5rem;
+  /* fixed navbar height*/
+  margin: -6.5rem 0 0;
+  /* negative fixed navbar height */ }
 
 .about__container {
   padding: 3.5rem 0 10rem;
@@ -78,6 +101,13 @@ body {
   @media only screen and (max-width: 75em) {
     .about__container {
       padding: 5rem 3rem; } }
+
+.about .me {
+  display: flex;
+  justify-content: space-between; }
+  @media only screen and (max-width: 56.25em) {
+    .about .me {
+      flex-direction: column; } }
 
 .portfolio .heading-2 {
   color: #B8A254; }
@@ -106,14 +136,6 @@ body {
       display: flex;
       flex-direction: column; } }
 
-:target::before {
-  content: "";
-  display: block;
-  height: 6.5rem;
-  /* fixed navbar height*/
-  margin: -6.5rem 0 0;
-  /* negative fixed navbar height */ }
-
 .title {
   display: none; }
 
@@ -121,7 +143,20 @@ body {
   height: 32vh;
   position: absolute;
   top: 16vh;
-  left: 14vw; }
+  left: 14vw;
+  z-index: 1;
+  animation: fadeIn 3s ease-in; }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(30vh, 50vh); }
+  30% {
+    opacity: 0;
+    transform: translate(30vh, 50vh); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
   @media screen and (orientation: portrait) {
     .logo {
       height: 28vh;
@@ -239,13 +274,6 @@ body {
     opacity: 1; }
     .navbar__checkbox:checked ~ .navbar__list .navbar__item {
       transform: scaleY(1); }
-
-.me {
-  display: flex;
-  justify-content: space-between; }
-  @media only screen and (max-width: 56.25em) {
-    .me {
-      flex-direction: column; } }
 
 .card {
   width: 28%;
