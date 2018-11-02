@@ -2,6 +2,7 @@
 // HEADER
 .header {
   height: 100vh;
+  position: relative;
   background-image: url("../img/hero-img.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,23 +13,68 @@
     height: calc(var(--vh, 1vh) * 100);
     background-image: url("../img/hero-img-portrait.jpg");
   }
+}
 
-  .navbar {
-    position: fixed;
-    min-height: 6.5rem;
-    width: 100%;
-    background-color: $color-dark;
-    z-index: 10;
+//////////////////////////////////////
+// ABOUT
+.about {
+  &__container {
+    padding: 3.5rem 0 10rem;
+    max-width: 120rem;
+    margin: 0 auto;
 
-    @include respond(phone) {
-      flex-direction: column;
+    @include respond(tab-land) {
+      padding: 5rem 3rem;
     }
   }
 }
 
 //////////////////////////////////////
-// CONTAINER
+// PORTFOLIO
+.portfolio {
+  .heading-2 {
+    color: $color-secondary;
+  }
 
+  &__container {
+    background-color: $color-dark;
+    padding: 3.5rem 10rem 10rem;
+
+    @include respond(tab-port) {
+      padding: 3rem 6rem 5rem;
+    }
+
+    @include respond(phone) {
+      padding: 3rem 3rem 5rem;
+    }
+  }
+}
+
+//////////////////////////////////////////////////
+// CONTACT
+.contact {
+  &__container {
+    padding: 3.5rem 2rem 5rem;
+  }
+}
+
+//////////////////////////////////////
+// FOOTER
+.footer {
+  background-color: $color-dark;
+  color: $color-secondary;
+  padding: 2.5rem 5rem 3rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @include respond(phone) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+}
 
 // Adjust target position after navbar
 :target::before {

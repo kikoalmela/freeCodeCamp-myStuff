@@ -1,39 +1,40 @@
 //////////////////////////////////////
-// HEADER
-.header {
-  position: relative;
+// TITLE & LOGO
+.title {
+  display: none;
+}
 
-  &__title {
-    display: none;
-  }
+.logo {
+  height: 32vh;
+  position: absolute;
+  top: 16vh;
+  left: 14vw;
 
-  &__logo {
-    height: 32vh;
-    position: absolute;
-    top: 16vh;
-    left: 14vw;
-
-    @media screen and (orientation: portrait) {
-      height: 28vh;
-      top: 18vh;
-      left: 18vw;
-    }
+  @media screen and (orientation: portrait) {
+    height: 28vh;
+    top: 18vh;
+    left: 18vw;
   }
 }
 
 //////////////////////////////////////
 // NAVBAR
 .navbar {
+  position: fixed;
+  min-height: 6.5rem;
+  width: 100%;
+  z-index: 10;
   padding: 0 5rem;
+  background-color: $color-dark;
   box-shadow: 0 0.2rem 5rem rgba(#000, 0.8);
-  position: relative;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   @include respond(phone) {
-    padding-top: .6rem;
+    flex-direction: column;
+    padding-top: 0.6rem;
   }
 
   &__logo {
@@ -89,8 +90,8 @@
     }
 
     &::before,
-    &::after,{
-      content: "";
+    &::after {
+      content: '';
       position: absolute;
       left: 0;
       transition: all 0.2s;
@@ -112,7 +113,7 @@
 
     display: flex;
 
-    // colapsed nav
+    // colapsed navigation
     @include respond(phone) {
       height: 0;
       z-index: 1500;
@@ -165,7 +166,7 @@
     }
   }
 
-  .active  {
+  .active {
     color: $color-secondary-light;
     background-size: 100% 2px;
   }
@@ -197,48 +198,38 @@
 }
 
 //////////////////////////////////////
-// ABOUT
-.about {
-  &__container {
-    padding: 3.5rem 0 10rem;
-    max-width: 120rem;
-    margin: 0 auto;
+// ME
+.me {
+  display: flex;
+  justify-content: space-between;
 
-    @include respond(tab-land) {
-      padding: 5rem 3rem;
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+}
+
+//////////////////////////////////////
+// CARD
+.card {
+  width: 28%;
+  padding: 3rem 4rem;
+  border-radius: 2px;
+  box-shadow: 0 0.6rem 2rem rgba(#000, 0.1);
+
+  @include respond(tab-port) {
+    width: 70%;
+    align-self: center;
+
+    &:not(:last-child) {
+      margin-bottom: 8rem;
     }
   }
 
-  &__descriptions {
-    display: flex;
-    justify-content: space-between;
+  @include respond(phone) {
+    width: 90%;
 
-    @include respond(tab-port) {
-      flex-direction: column;
-    }
-  }
-
-  &__card {
-    width: 28%;
-    padding: 3rem 4rem;
-    border-radius: 2px;
-    box-shadow: 0 0.6rem 2rem rgba(#000, 0.1);
-
-    @include respond(tab-port) {
-      width: 70%;
-      align-self: center;
-
-      &:not(:last-child) {
-        margin-bottom: 8rem;
-      }
-    }
-
-    @include respond(phone) {
-      width: 90%;
-
-      &:not(:last-child) {
-        margin-bottom: 6rem;
-      }
+    &:not(:last-child) {
+      margin-bottom: 6rem;
     }
   }
 
@@ -260,12 +251,14 @@
     font-style: italic;
     margin-top: 3.5rem;
   }
+}
 
-  &__skills {
-    padding-top: 4rem;
-  }
+//////////////////////////////////////
+// TOOLSET
+.toolset {
+  padding-top: 4rem;
 
-  &__logos-container {
+  &__row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -293,57 +286,41 @@
   }
 }
 
+
 //////////////////////////////////////
-// PORTFOLIO
-.portfolio {
-  .heading-2 {
-    color: $color-secondary;
+// GALLERY
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+  grid-row-gap: 3rem;
+  grid-column-gap: 8rem;
+
+  @include respond(tab-land) {
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   }
 
-  &__container {
-    background-color: $color-dark;
-    padding: 3.5rem 10rem 10rem;
-
-    @include respond(tab-port) {
-      padding: 3rem 6rem 5rem;
-    }
-
-    @include respond(phone) {
-      padding: 3rem 3rem 5rem;
-    }
+  @include respond(tab-port) {
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
   }
 
-  &__gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
-    grid-row-gap: 3rem;
-    grid-column-gap: 8rem;
-
-    @include respond(tab-land) {
-      grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
-    }
-
-    @include respond(tab-port) {
-      grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-    }
-
-    @include respond(phone) {
-      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    }
-
-    @include respond(big-desktop) {
-      max-width: 2100px;
-      margin: 0 auto;
-
-      grid-template-columns: repeat(auto-fit, minmax(60rem, 1fr));
-    }
+  @include respond(phone) {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   }
 
-  &__tile {
-    padding: 2rem 2rem 0;
-    background-color: $color-dark;
-    overflow: hidden;
+  @include respond(big-desktop) {
+    max-width: 2100px;
+    margin: 0 auto;
+
+    grid-template-columns: repeat(auto-fit, minmax(60rem, 1fr));
   }
+}
+
+//////////////////////////////////////
+// TILE
+.tile {
+  padding: 2rem 2rem 0;
+  background-color: $color-dark;
+  overflow: hidden;
 
   &__img {
     width: 100%;
@@ -404,14 +381,8 @@
   }
 }
 
-//////////////////////////////////////////////////
-// CONTACT
-.contact {
-  &__container {
-    padding: 3.5rem 2rem 5rem;
-  }
-}
 
+//////////////////////////////////////////////////
 // FORM
 .form {
   max-width: 70rem;
@@ -523,38 +494,22 @@
   }
 }
 
-//////////////////////////////////////
-// FOOTER
+//////////////////////////////////////////////////
+// SOCIAL-ROW
+.social-row {
+  display: flex;
+  justify-content: center;
+  grid-column: 2 / 3;
+}
 
-.footer {
-  background-color: $color-dark;
-  color: $color-secondary;
-  padding: 2.5rem 5rem 3rem;
+//////////////////////////////////////////////////
+// PROFILE
+.profile {
+  text-align: center;
+  font-size: 1.2rem;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  @include respond(phone) {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__social-row {
-    display: flex;
-    justify-content: center;
-    grid-column: 2 / 3;
-  }
-
-  &__social {
-    text-align: center;
-    font-size: 1.2rem;
-
-    &:not(:last-child) {
-      margin-right: 5rem;
-    }
-  }
-
-  &__link {
+  &:not(:last-child) {
+    margin-right: 5rem;
   }
 
   &__icon {
@@ -563,14 +518,17 @@
     color: $color-secondary;
   }
 
-  &__copy {
-    text-align: end;
-    align-self: end;
+}
 
-    @include respond(phone) {
-      margin-top: 2rem;
-      text-align: center;
-      align-self: auto;
-    }
+//////////////////////////////////////////////////
+// COPY
+.copy {
+  text-align: end;
+  align-self: end;
+
+  @include respond(phone) {
+    margin-top: 2rem;
+    text-align: center;
+    align-self: auto;
   }
 }
