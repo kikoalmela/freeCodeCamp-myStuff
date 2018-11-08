@@ -22,7 +22,7 @@ function sumFibs(num) {
   // create an array to store all fibonacci numbers less or equal to num, with the first two fibonacci numbers.
   let fibsArr = [1, 1];
   while (fibsArr[0] + fibsArr[1] <= num) {
-    // add new one at the begining of the array for simplicity of last two numbers tracking
+    // add new one at the beginning of the array for simplicity of last two numbers tracking
     fibsArr.unshift(fibsArr[0] + fibsArr[1]);
   }
   // reverse the array (in case the higher number is even) and sum all odd numbers
