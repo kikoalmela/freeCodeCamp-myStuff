@@ -49,21 +49,22 @@ function checkCashRegister(price, cash, cid) {
   for (let i = CURR_VALUES.length - 1; i >= 0; i--) {
     // Declare the amount of currency needed and set to 0
     let amount = 0;
+    let currency = CURR_VALUES[i];
     // For each currency, while changeDue is greater than currency value and there is currency in cid
-    while (changeDue >= CURR_VALUES[i] && cid[i][1]) {
+    while (changeDue >= currency && cid[i][1]) {
       debugger;
       // Add currency value to amount
-      amount += CURR_VALUES[i];
+      amount += currency;
       // Subtract currency value from changeDue
-      changeDue -= CURR_VALUES[i];
+      changeDue -= currency;
       // Round changeDue to deal with precision errors
       changeDue = Math.round(changeDue * 100) / 100;
       // Subtract value from this currency in cid
-      cid[i][1] -= CURR_VALUES[i];
+      cid[i][1] -= currency;
     }
     // Add amount of currency to result if used
     if (amount) result.change.push([cid[i][0], amount]);
-    // Set this currency to 0 in cid and test if it remain enough cash in drawer
+    // Set this currency to 0 in cid and test if there is enough remaining cash in drawer
     cid[i][1] = 0;
     if (changeDue > totalCashInDrawer()) {
       result.status = 'INSUFFICIENT_FUNDS';
@@ -72,7 +73,7 @@ function checkCashRegister(price, cash, cid) {
     }
   }
 
-  // Set status to OPEN
+  // When changeDue has been completed, set status to OPEN
   result.status = 'OPEN';
   // Here is your change, ma'am.
   return result;
