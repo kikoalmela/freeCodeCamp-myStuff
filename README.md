@@ -7,3 +7,27 @@ Website:	www.freecodecamp.org.
 >From [Wikipedia](https://en.wikipedia.org/wiki/FreeCodeCamp).
 
 My certificates projects and some other challenges from freeCodeCamp.
+
+## [Responsive Web Design](https://github.com/kikoalmela/freeCodeCamp-myStuff/tree/master/01-responsive-web-design)
+
+### Projects
+
+- [Tribute Page](https://github.com/kikoalmela/freeCodeCamp-myStuff/tree/master/01-responsive-web-design/tribute-page)
+- [Survey Form](https://github.com/kikoalmela/freeCodeCamp-myStuff/tree/master/01-responsive-web-design/survey-form)
+- [Product Landing Page](https://github.com/kikoalmela/freeCodeCamp-myStuff/tree/master/01-responsive-web-design/product-landing-page)
+- [Technical Documentation Page](https://github.com/kikoalmela/freeCodeCamp-myStuff/tree/master/01-responsive-web-design/technical-documentation-page)
+- [Personal Portfolio Webpage](https://github.com/kikoalmela/freeCodeCamp-myStuff/tree/master/01-responsive-web-design/personal-portfolio)
+
+## [Javascript Algorithm and Data Structures](https://github.com/kikoalmela/freeCodeCamp-myStuff/blob/master/02-javascript-algorithms-and-data-structures)
+
+### Challenges
+
+- [Intermediate Algorithm Scripting](https://github.com/kikoalmela/freeCodeCamp-myStuff/tree/master/02-javascript-algorithms-and-data-structures/intermediate-algorithm-scripting)
+
+### Projects
+
+- [Palindrome Checker](https://github.com/kikoalmela/freeCodeCamp-myStuff/blob/master/02-javascript-algorithms-and-data-structures/projects/palindrome-checker)
+- [Roman Numeral Converter](https://github.com/kikoalmela/freeCodeCamp-myStuff/blob/master/02-javascript-algorithms-and-data-structures/projects/roman-numeral-converter)
+- [Caesars Cipher](https://github.com/kikoalmela/freeCodeCamp-myStuff/blob/master/02-javascript-algorithms-and-data-structures/projects/caesars-cipher)
+- [Telephone Number Validator](https://github.com/kikoalmela/freeCodeCamp-myStuff/blob/master/02-javascript-algorithms-and-data-structures/projects/telephone-number-validator)
+- [Cash Register](https://github.com/kikoalmela/freeCodeCamp-myStuff/blob/master/02-javascript-algorithms-and-data-structures/projects/cash-register)
