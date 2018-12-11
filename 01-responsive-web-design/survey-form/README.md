@@ -1,4 +1,4 @@
-# Responsive Web Design Projects - Build a Tribute Page
+# Responsive Web Design Projects - Build a Survey Form
 
 ## Instructions
 1. From your terminal, clone locally using `git clone https://github.com/kikoalmela/freeCodeCamp-myStuff.git` (This will clone all my freeCodeCamp repository)
