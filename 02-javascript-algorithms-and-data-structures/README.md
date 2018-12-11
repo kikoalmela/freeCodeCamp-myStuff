@@ -1,10 +1,10 @@
 # Javascript Algorithms And Data Structures Certification
 
-## Intermediate Algorithm Scripting Challenges
+## [Intermediate Algorithm Scripting Challenges](https://github.com/kikoalmela/freeCodeCamp-myStuff/tree/master/02-javascript-algorithms-and-data-structures/intermediate-algorithm-scripting)
 
 My solutions to these freeCodeCamp challenges.
 
-## JavaScript Algorithms and Data Structures Projects
+## [JavaScript Algorithms and Data Structures Projects](https://github.com/kikoalmela/freeCodeCamp-myStuff/tree/master/02-javascript-algorithms-and-data-structures/projects)
 
 Challenges with which I got my second [freeCodeCamp certificate](https://www.freecodecamp.org/certification/kikoalmela/javascript-algorithms-and-data-structures):
 - [Palindrome Checker](https://github.com/kikoalmela/freeCodeCamp-myStuff/blob/master/02-javascript-algorithms-and-data-structures/projects/palindrome-checker)
