@@ -1,9 +1,15 @@
 # Responsive Web Design Projects - Build a Technical Documentation Page
 
 ## Instructions
-1. From your terminal, clone locally using `git clone https://github.com/kikoalmela/freeCodeCamp-myStuff.git` (This will clone all my freeCodeCamp repository)
-2. Go to the technical-documentation-page directory: `cd freeCodeCamp-myStuff/01-responsive-web-design/technical-documentation-page`
-3. Open index.html in your browser: `open index.html`
+1. From your terminal, clone locally using `git clone https://github.com/kikoalmela/freeCodeCamp-myStuff.git` (This will clone all my freeCodeCamp repository).
+2. Go to the technical-documentation-page directory: `cd freeCodeCamp-myStuff/01-responsive-web-design/technical-documentation-page`.
+3. Open index.html in your browser: `open index.html`.
+
+If you want to run it on a local server to try and see live changes (You need [node.js](https://nodejs.org/en/) already installed on you system, and [npm](https://www.npmjs.com/), witch comes included with node.js):
+
+1. After doing the previous steps 1 and 2, run `npm install` inside the project's directory.
+2. If you don't have it, install the [live-server](https://github.com/tapio/live-server) node package: `npm install -g live-server`.
+3. Run `npm start`. This starts a local server, serves the page on localhost:8080, opens the page in the browser and auto updates after any changes you make in the source code.
 
 
 ## Discussion

@@ -5,6 +5,11 @@
 2. Go to product-landing-page directory: `cd freeCodeCamp-myStuff/01-responsive-web-design/product-landing-page`
 3. Open index.html in your browser: `open index.html`
 
+If you want to run it on a local server to try and see live changes (You need [node.js](https://nodejs.org/en/) already installed on you system, and [npm](https://www.npmjs.com/), witch comes included with node.js):
+
+1. After doing the previous steps 1 and 2, run `npm install` inside the project's directory.
+2. If you don't have it, install the [live-server](https://github.com/tapio/live-server) node package: `npm install -g live-server`.
+3. Run `npm start`. This starts a local server, serves the page on localhost:8080, opens the page in the browser and auto updates after any changes you make in the source code.
 
 ## Discussion
 I used the following technologies: **HTML**, **CSS** and **Sass**, including CSS-flexbox and CSS-animations.
